@@ -396,7 +396,7 @@ select yn in "Yes" "No"; do
     sudo systemctl daemon-reload
     sudo systemctl enable $currpath/dataloggerapi.service
     sudo systemctl start dataloggerapi.service
-    break;;
-        No ) exit;;
+    break;
+        No ) exit;
     esac
 done
