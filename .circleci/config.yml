@@ -23,7 +23,7 @@ jobs:
         - checkout
         - run:
             name: run Datalogger_configuration script
-            command: cat input.txt | bash copy_data.sh
+            command: cat input1.txt | bash copy_data.sh
         - checkout
         - run:
             name: run Datalogger script
