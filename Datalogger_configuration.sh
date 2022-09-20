@@ -398,8 +398,11 @@ select yn in "Yes" "No"; do
     sudo systemctl start dataloggerapi.service
     status7= $(sudo service dataloggerapi status)
     echo $status7
-    break;;
-        No ) exit;;    
+    	exit
+    	done
+    	break;;
+        No ) 
+	exit;;    
     esac
 done
 
