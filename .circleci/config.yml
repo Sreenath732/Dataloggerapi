@@ -28,3 +28,7 @@ jobs:
         - run:
             name: run Datalogger script
             command: bash Datalogger.sh
+        - checkout
+        - run:
+            name: cppcheck
+            command: sudo apt install cppcheck && bash cppcheck.sh
