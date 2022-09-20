@@ -399,6 +399,5 @@ select yn in "Yes" "No"; do
     status7= $(sudo service dataloggerapi status)
     echo $status7
     break
-    esac
 done
 
