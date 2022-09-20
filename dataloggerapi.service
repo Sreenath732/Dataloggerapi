@@ -1,0 +1,20 @@
+[Unit]
+Description=Service that keeps listen on port 6789
+After=network.service auditd.service postgresql.service
+[Service]
+Type=simple
+
+ExecStart=/bin/dataloggerapi/dataloggerapi 6789
+WorkingDirectory=/bin/dataloggerapi
+
+Restart=always
+RestartSec=10
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=append:/var/log/dataloggerapi/error.log
+
+Nice=-15
+
+[Install]
+WantedBy=multi-user.target

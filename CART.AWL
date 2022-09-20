@@ -1,0 +1,1957 @@
+DATA_BLOCK "KcLog_CART"
+TITLE =
+AUTHOR : vlcpah
+FAMILY : KcLog
+NAME : CART
+VERSION : 0.9
+
+
+  STRUCT 	
+   CART : STRUCT 	
+    Header : STRUCT 	
+     Crane_ID : INT ;	//Crane ID (G number)
+     Sender : INT  := 1;	//Sender ID
+     seq : INT ;	
+     Len : INT  := 1300;	//Lenght of Data 
+     Spare_I8 : INT ;	
+     Spare_I10 : INT ;	
+    END_STRUCT ;	
+    A1 : STRUCT 	//Hoist 1 Drive
+     PD1 : INT ;	//Speed     	
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW1_Ramp2 : BOOL ;	//RAMP2
+      spare_x1_6 : BOOL ;	
+      spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    A2 : STRUCT 	//Hoist 2 Drive
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW1_Ramp2 : BOOL ;	//RAMP2
+      spare_x1_6 : BOOL ;	
+      spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    E : STRUCT 	//Trolley Drive
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW2_Setposition : BOOL ;	//Encoder calibration
+      CW3_FloatingBypass : BOOL ;	//Floating Bypass
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    R1 : STRUCT 	//Gantry Drive 1
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW3_FloatingBypass : BOOL ;	//Floating Bypass
+      CW1_AltControlMode : BOOL ;	//Alt control Mode
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    R2 : STRUCT 	//Gantry Drive 2
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW3_FloatingBypass : BOOL ;	//Floating Bypass
+      CW1_AltControlMode : BOOL ;	//Alt control Mode
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    R3 : STRUCT 	//Gantry Drive 3
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW3_FloatingBypass : BOOL ;	//Floating Bypass
+      CW1_AltControlMode : BOOL ;	//Alt control Mode
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    R4 : STRUCT 	//Gantry Drive 4
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF1 : INT ;	//Speed reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_S12 : BOOL ;	//STOP LIMIT DIR1
+      CW1_S22 : BOOL ;	//STOP LIMIT DIR2
+      CW2_RunDisable : BOOL ;	//RUN_DISABLE
+      CW3_FloatingBypass : BOOL ;	//Floating Bypass
+      CW1_AltControlMode : BOOL ;	//Alt control Mode
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    B1 : STRUCT 	//ACM DRIVE 1
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF2 : INT ;	//Torque reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_5 : BOOL ;	
+      Spare_x0_6 : BOOL ;	
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      Spare_x1_1 : BOOL ;	
+      Spare_x1_2 : BOOL ;	
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    B2 : STRUCT 	//ACM DRIVE 2
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF2 : INT ;	//Torque reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_5 : BOOL ;	
+      Spare_x0_6 : BOOL ;	
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      Spare_x1_1 : BOOL ;	
+      Spare_x1_2 : BOOL ;	
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    B3 : STRUCT 	//ACM DRIVE 3
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF2 : INT ;	//Torque reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_5 : BOOL ;	
+      Spare_x0_6 : BOOL ;	
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      Spare_x1_1 : BOOL ;	
+      Spare_x1_2 : BOOL ;	
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    B4 : STRUCT 	//ACM DRIVE 4
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF2 : INT ;	//Torque reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_5 : BOOL ;	
+      Spare_x0_6 : BOOL ;	
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      Spare_x1_1 : BOOL ;	
+      Spare_x1_2 : BOOL ;	
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    W : STRUCT 	//Cable reel Drive
+     PD1 : INT ;	//Speed      
+     PD2 : INT ;	//Current     
+     PDn : INT ;	
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     REF2 : INT ;	//Torque reference    
+     Bits : STRUCT 	
+      VA_RUN : BOOL ;	//RUN
+      VA_DriveOK : BOOL ;	//Drive OK
+      VAM_DIR1_Motor : BOOL ;	//MOTOR DIR1
+      VAM_DIR2_Motor : BOOL ;	//MOTOR DIR2
+      FaultInverted : BOOL ;	//NOT FAULT
+      Ready : BOOL ;	//READY
+      K7 : BOOL ;	//BRAKE CONTROL
+      Spare_x0_7 : BOOL ;	
+      CW1_S1 : BOOL ;	//DIR 1
+      CW1_S2 : BOOL ;	//DIR 2
+      CW1_AltControlMode : BOOL ;	//Alt control Mode
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    O : STRUCT 	//Dynareq
+     PD1 : INT ;	//DC-Link Voltage
+     PD2 : INT ;	//Total Current     
+     PD3 : INT ;	//Active Current
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     Bits : STRUCT 	
+      RUN : BOOL ;	//RUN
+      Ready : BOOL ;	//READY
+      Synchronized : BOOL ;	//Synchronized
+      FaultInverted : BOOL ;	//NOT FAULT
+      Spare_x0_4 : BOOL ;	
+      Spare_x0_5 : BOOL ;	
+      Spare_x0_6 : BOOL ;	
+      Spare_x0_7 : BOOL ;	
+      CW_Synchronized : BOOL ;	//Synchronized control
+      Spare_x1_1 : BOOL ;	
+      Spare_x1_2 : BOOL ;	
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    T : STRUCT 	//Dynacon
+     PD1 : INT ;	//DC-Link Voltage
+     PD2 : INT ;	//Total Current     
+     PD3 : INT ;	//Active Current
+     PD5 : INT ;	//Unit Temp    
+     PD8 : INT ;	//Fault codes    
+     Bits : STRUCT 	
+      RUN : BOOL ;	//RUN
+      Ready : BOOL ;	//READY
+      Fault_Inverted : BOOL ;	//NOT FAULT
+      Spare_x0_3 : BOOL ;	
+      Spare_x0_4 : BOOL ;	
+      Spare_x0_5 : BOOL ;	
+      Spare_x0_6 : BOOL ;	
+      Spare_x0_7 : BOOL ;	
+      Spare_x1_0 : BOOL ;	
+      Spare_x1_1 : BOOL ;	
+      Spare_x1_2 : BOOL ;	
+      Spare_x1_3 : BOOL ;	
+      Spare_x1_4 : BOOL ;	
+      Spare_x1_5 : BOOL ;	
+      Spare_x1_6 : BOOL ;	
+      Spare_x1_7 : BOOL ;	
+     END_STRUCT ;	
+    END_STRUCT ;	
+    Control : STRUCT 	//Control Place
+     MO_CSEL : BOOL ;	//Cabin control place
+     MO_RSEL : BOOL ;	//Radio control place
+     MO_F1SEL : BOOL ;	//ROS control place
+     MO_F2SEL : BOOL ;	//MROS control place
+     MO_SSEL : BOOL ;	//CCS control place
+     MO_GSEL : BOOL ;	//Ground level control place
+     MO_TSEL : BOOL ;	//Trolley control place
+     con_x07 : BOOL ;	
+     IO_CON : BOOL ;	//Main contactor ON
+     MO_ESTOP_OK : BOOL ;	//Estop OK
+     con_x10 : BOOL ;	
+     con_x11 : BOOL ;	
+     con_x12 : BOOL ;	
+     Maintenance_mode : BOOL ;	//Maintenance_mode
+     Remote_Sel : BOOL ;	//Remote control selected
+     Local_Sel : BOOL ;	//Local control selected
+    END_STRUCT ;	
+    Hoist : STRUCT 	//Hoist 
+     A1_POS : REAL ;	//Hoist 1 position in [m]  
+     A2_POS : REAL ;	//Hoist 2 position in [m]  
+     A1_A2_POS_DIFF : REAL ;	//Hoist positions Difference [m]  
+     SYNCHRO_POSITION : REAL ;	//Position error to Synchro [m]
+     TRIM_POSITION : REAL ;	//Trim Position [m] 
+     MA_CLOAD : REAL ;	//Total container load value [t]
+     MA_LOAD : REAL ;	//Total load value [t]
+     MA1_LOAD : REAL ;	//A1 total load value [t]
+     MA2_LOAD : REAL ;	//A2 total load value [t]
+     LOAD_VAR_LOAD_RL : REAL ;	//Total corner load [t]
+     LOAD_VAR_LOAD_FL : REAL ;	//Total corner load [t]  
+     LOAD_VAR_LOAD_FR : REAL ;	//Total corner load [t]  
+     LOAD_VAR_LOAD_RR : REAL ;	//Total corner load [t]  
+     CORNER_1_LOAD : REAL ;	//Hoist 1 loadcell 1 load [t]
+     CORNER_2_LOAD : REAL ;	//Hoist 1 loadcell 2 load [t]
+     CORNER_3_LOAD : REAL ;	//Hoist 2 loadcell 1 load [t]
+     CORNER_4_LOAD : REAL ;	//Hoist 2 loadcell 2 load [t]
+     SPEED_REQUEST : REAL ;	//Speed Request [%]
+     SLOWDOWN_SPD : REAL ;	//Slowdown speed  [%] 
+     ESP : REAL ;	//Hoist Estimated Position [m]
+     A_LOAD_CHANGE : INT ;	//Load Changed counter
+     MA1_DIR1_DIS : BOOL ;	
+     MA1_DIR2_DIS : BOOL ;	
+     MA1_DIR1_STOP : BOOL ;	
+     MA1_DIR2_STOP : BOOL ;	
+     MA2_DIR1_DIS : BOOL ;	
+     MA2_DIR2_DIS : BOOL ;	
+     MA2_DIR1_STOP : BOOL ;	
+     MA2_DIR2_STOP : BOOL ;	
+     MA_POS_OK : BOOL ;	
+     Sync_Error : BOOL ;	
+     Sync_stop : BOOL ;	
+     MA_SR : BOOL ;	
+     MA_Someload : BOOL ;	
+     ho_x83_5 : BOOL ;	
+     ho_x83_6 : BOOL ;	
+     ho_x83_7 : BOOL ;	
+     ho_x84_0 : BOOL ;	
+     ho_x84_1 : BOOL ;	
+     ho_x84_2 : BOOL ;	
+     ho_x84_3 : BOOL ;	
+     ho_x84_4 : BOOL ;	
+     ho_x84_5 : BOOL ;	
+     ho_x84_6 : BOOL ;	
+     ho_x84_7 : BOOL ;	
+     MAR_DIR1 : BOOL ;	//Hoist joystick radio   
+     MAR_DIR2 : BOOL ;	//Hoist joystick radio   
+     MAF_DIR1 : BOOL ;	//Hoist joystick ROS   
+     MAF_DIR2 : BOOL ;	//Hoist joystick ROS   
+     MAS_DIR1 : BOOL ;	//Hoist drive request CCS  
+     MAS_DIR2 : BOOL ;	//Hoist drive request CCS  
+     ho_x85_6 : BOOL ;	
+     ho_x85_7 : BOOL ;	
+    END_STRUCT ;	
+    Trolley : STRUCT 	//Trolley
+     POS : REAL ;	//Trolley Position [m]
+     D2V_POS : REAL ;	//Trolley Position Drive [m]
+     CCS_POS : REAL ;	//Trolley_Position CCS [m]
+     Speed_Request : REAL ;	//Trolley Speed Request [%]
+     Slowdown_Speed : REAL ;	//Trolley Slowdown speed [%]
+     ESP : REAL ;	//Trolley Estimated Stopping Position [m]
+     DIR1_DIS : BOOL ;	
+     DIR2_DIS : BOOL ;	
+     DIR1_STOP : BOOL ;	
+     DIR2_STOP : BOOL ;	
+     POS_OK : BOOL ;	
+     Tr_x24_5 : BOOL ;	
+     Tr_x24_6 : BOOL ;	
+     Tr_x24_7 : BOOL ;	
+     MER_DIR1 : BOOL ;	//Trolley drive request radio  
+     MER_DIR2 : BOOL ;	//Trolley drive request radio  
+     MEF_DIR1 : BOOL ;	//Trolley drive request ROS  
+     MEF_DIR2 : BOOL ;	//Trolley drive request ROS  
+     MES_DIR1 : BOOL ;	//Trolley drive request CCS  
+     MES_DIR2 : BOOL ;	//Trolley drive request CCS  
+     Tr_x25_6 : BOOL ;	
+     Tr_x25_7 : BOOL ;	
+    END_STRUCT ;	
+    Gantry : STRUCT 	//Gantry
+     POS : REAL ;	//Gantry Position [m]
+     CRANE_TO_CRANE_DISTANCE : REAL ;	//Crane to Crane Distance  [m]
+     Speed_Request : REAL ;	//Ganty Speed Request [%]
+     Slowdown_Speed : REAL ;	//Gantry Slowdown speed [%]
+     ESP : REAL ;	//Gantry Estimated Stopping Position [m]
+     DIR1_DIS : BOOL ;	
+     DIR2_DIS : BOOL ;	
+     DIR1_STOP : BOOL ;	
+     DIR2_STOP : BOOL ;	
+     MR_POS_OK : BOOL ;	
+     Ga_x20_5 : BOOL ;	
+     Ga_x20_6 : BOOL ;	
+     Ga_x20_7 : BOOL ;	
+     MRR_DIR1 : BOOL ;	//Gantry drive request radio  
+     MRR_DIR2 : BOOL ;	//Gantry drive request radio  
+     MRF_DIR1 : BOOL ;	//Gantry drive request ROS  
+     MRF_DIR2 : BOOL ;	//Gantry drive request ROS  
+     MRS_DIR1 : BOOL ;	//Gantry drive request CCS  
+     MRS_DIR2 : BOOL ;	//Gantry drive request CCS  
+     Ga_x21_6 : BOOL ;	
+     Ga_x21_7 : BOOL ;	
+     MR_ACC : BOOL ;	
+     MR_DEC : BOOL ;	
+     MR2_ACC : BOOL ;	
+     MR2_DEC : BOOL ;	
+     MR_ENC_ACC : BOOL ;	
+     MR_ENC_DEC : BOOL ;	
+     MR_MINSPON : BOOL ;	
+     Ga_x22_7 : BOOL ;	
+     Ga_x23_0 : BOOL ;	
+     Ga_x23_1 : BOOL ;	
+     Ga_x23_2 : BOOL ;	
+     Ga_x23_3 : BOOL ;	
+     Ga_x23_4 : BOOL ;	
+     Ga_x23_5 : BOOL ;	
+     Ga_x23_6 : BOOL ;	
+     Ga_x23_7 : BOOL ;	
+    END_STRUCT ;	
+    ACM : STRUCT 	//ACM
+     B1_LOAD : REAL ;	//ACM 1 Load [t]
+     B2_LOAD : REAL ;	//ACM 2 Load [t]
+     B3_LOAD : REAL ;	//ACM 3 Load [t]
+     B4_LOAD : REAL ;	//ACM 4 Load [t]
+     Skew_Ref : REAL ;	//Skew reference [%]
+     MM_E_REF : REAL ;	//Micromove E reference [%]
+     MM_R_REF : REAL ;	//Micromove R reference [%]
+     KN_Factor : REAL ;	//KN FActor
+     B1_Sway_Speed : REAL ;	//ACM 1 Sway speed
+     B2_Sway_Speed : REAL ;	//ACM 2 Sway speed
+     B3_Sway_Speed : REAL ;	//ACM 3 Sway speed
+     B4_Sway_Speed : REAL ;	//ACM 4 Sway speed
+     B1_Force_OUT : REAL ;	//ACM 1 Force_output [kN]
+     B2_Force_OUT : REAL ;	//ACM 2 Force_output [kN]
+     B3_Force_OUT : REAL ;	//ACM 3 Force_output [kN]
+     B4_Force_OUT : REAL ;	//ACM 4 Force_output [kN]
+    END_STRUCT ;	
+    Spreader : STRUCT 	//Spreader
+     Twistlocks_Locked : BOOL ;	//Twistlock Locked    
+     Twistlocks_Unlocked : BOOL ;	//Twistlock Unlocked    
+     Landed : BOOL ;	//Landed     
+     Telescope_locked : BOOL ;	//Telescope locks locked   
+     Telescope_unlocked : BOOL ;	//Telescope locks unlocked   
+     Twin_UP : BOOL ;	//Twin UP
+     Spr_x06 : BOOL ;	
+     Spr_x07 : BOOL ;	
+     Spr_x08 : BOOL ;	
+     Spr_x09 : BOOL ;	
+     Spr_x10 : BOOL ;	
+     Spr_x11 : BOOL ;	
+     Spr_x12 : BOOL ;	
+     Spr_x13 : BOOL ;	
+     Spr_x14 : BOOL ;	
+     Spr_x15 : BOOL ;	
+    END_STRUCT ;	
+    Bogie : STRUCT 	//Bogie
+     Pos1 : REAL ;	//Bogie 1 Position [dec]
+     Pos2 : REAL ;	//Bogie 2 Position [dec]
+     Pos3 : REAL ;	//Bogie 3 Position [dec]
+     Pos4 : REAL ;	//Bogie 4 Position [dec]
+     Pos5 : REAL ;	//Bogie 5 Position [dec]
+     Pos6 : REAL ;	//Bogie 6 Position [dec]
+     Pos7 : REAL ;	//Bogie 7 Position [dec]
+     Pos8 : REAL ;	//Bogie 8 Position [dec]
+    END_STRUCT ;	
+    Safeway : STRUCT 	//Safeway
+     A1_SPEED : REAL ;	//Safeway speed [m/s]
+     A2_SPEED : REAL ;	//Safeway speed [m/s]
+     A1_TARGET_SPEED : REAL ;	//Safeway Target Speed [mm/s]
+     A2_TARGET_SPEED : REAL ;	//Safeway Target Speed [mm/s]
+     A1_Safeway_Error : BOOL ;	
+     A1_Speed_Window_Alarm : BOOL ;	
+     A1_Overspeed1_Alarm : BOOL ;	
+     A1_Overspeed2_Alarm : BOOL ;	
+     A1_System_Alarm_Ack : BOOL ;	
+     A1_Speed_Window_Ack : BOOL ;	
+     A1_Overspeed1_Ack : BOOL ;	
+     A1_Overspeed2_Ack : BOOL ;	
+     A2_Safeway_Error : BOOL ;	
+     A2_Speed_Window_Alarm : BOOL ;	
+     A2_Overspeed1_Alarm : BOOL ;	
+     A2_Overspeed2_Alarm : BOOL ;	
+     A2_System_Alarm_Ack : BOOL ;	
+     A2_Speed_Window_Ack : BOOL ;	
+     A2_Overspeed1_Ack : BOOL ;	
+     A2_Overspeed2_Ack : BOOL ;	
+    END_STRUCT ;	
+    Cable_Reel : STRUCT 	//Cable_Reel
+     MIN_TRQ : REAL ;	//Selected MIN Torque [%]
+     MAX_TRQ : REAL ;	//Selected MAX Torque [%]
+     Transducer_Current : REAL ;	//Transducer Current Signal [mA]
+    END_STRUCT ;	
+    CCS : STRUCT 	//CCS
+     Gantry_Target : REAL ;	
+     Trolley_target : REAL ;	
+     List_Angle : REAL ;	
+     Trim_Angle : REAL ;	
+     CCS_Seq_State : INT ;	
+     spdr_diff_to_Cont_X : INT ;	//Distance to underlying container [mm]
+     spdr_diff_to_Cont_Y : INT ;	//Distance to underlying container [mm]  
+     spdr_diff_to_Cont_SKEW : INT ;	//Distance to underlying container [mdec] 
+     spdr_abspos_x : INT ;	//Spreader position from Sirrah Trolley Direction [mm]
+     spdr_abspos_y : INT ;	//Spreader position from Sirrah Gantry Direction [mm]
+     spdr_abspos_skew : INT ;	//Spreader position from Sirrah Skew [mdec]
+     spdr_diff_to_target_X : INT ;	//Distance to target position  [mm]
+     spdr_diff_to_target_Y : INT ;	//Distance to target position [mm] 
+     spdr_diff_to_target_Z : INT ;	//Distance to target position  [mm]
+     spdr_diff_to_target_SKEW : INT ;	//Distance to target position  [mdec]
+     Spdr_diff_to_Ideal_X : INT ;	//Spreader difference to Ideal X [mm]
+     Spdr_diff_to_Ideal_Y : INT ;	//Spreader difference to Ideal Y [mm]
+     Spdr_diff_to_Ideal_SK : INT ;	//Spreader difference to Ideal skew [mDec]
+     Angle_To_Track : INT ;	//Angle to Track [deg/100]
+     Distance_To_Track : INT ;	//Distance to Track [mm]
+     Autosteering_ok : BOOL ;	//Autosteering OK    
+     RTG_ON_RAIL : BOOL ;	//RTG ON Rail   
+    END_STRUCT ;	
+    MISC : STRUCT 	//MISC
+     Wind_Speed : REAL ;	//Wind Speed [m/s]
+     HUMID_EROOM : REAL ;	//E-room Humidity [%]
+     HUMID_TFR : REAL ;	//Transformer room Humidity [%]
+     HUMID_TR_CUBICLE : REAL ;	//Trolley cubicle Humidity [%]
+     TEMP_EROOM : REAL ;	//Eroom temperature [C]
+     TEMP_TFR : REAL ;	//Transformer room temperature [C]
+     TEMP_TR_CUBICLE : REAL ;	//Trolley cubicle temperature [C]
+    END_STRUCT ;	
+    Profibus : STRUCT 	//Profibus
+     Address_6 : BOOL ;	//Cable Reel
+     Address_7 : BOOL ;	//Dynareq
+     Address_9 : BOOL ;	//Dynacon
+     Address_10 : BOOL ;	//TrHouse I/O
+     Address_11 : BOOL ;	//Gantry R12 Drive
+     Address_12 : BOOL ;	//Gantry R34 Drive
+     Address_13 : BOOL ;	//Gantry R56 Drive
+     Address_14 : BOOL ;	//Gantry R78 Drive
+     Address_15 : BOOL ;	//Power meter
+     Address_16 : BOOL ;	//Radio
+     Address_20 : BOOL ;	//Trolley I/O
+     Address_21 : BOOL ;	//Safeway 1
+     Address_22 : BOOL ;	//Safeway 2
+     Address_x01 : BOOL ;	//      NOT   USED
+     Address_x02 : BOOL ;	//      NOT   USED
+     Address_x03 : BOOL ;	//      NOT   USED
+     Address_31 : BOOL ;	//Gantry R1 Encoder   
+     Address_32 : BOOL ;	//Gantry R2 Encoder   
+     Address_33 : BOOL ;	//Gantry R3 Encoder   
+     Address_34 : BOOL ;	//Gantry R4 Encoder   
+     Address_35 : BOOL ;	//Gantry R5 Encoder   
+     Address_36 : BOOL ;	//Gantry R6 Encoder   
+     Address_37 : BOOL ;	//Gantry R7 Encoder   
+     Address_38 : BOOL ;	//Gantry R8 Encoder   
+     Address_40 : BOOL ;	//      NOT   USED
+     Address_51 : BOOL ;	//ACM 1
+     Address_52 : BOOL ;	//ACM 2
+     Address_53 : BOOL ;	//ACM 3
+     Address_54 : BOOL ;	//ACM 4
+     Address_55 : BOOL ;	//Hoist 1
+     Address_56 : BOOL ;	//Hoist 2
+     Address_57 : BOOL ;	//Trolley
+     Address_60 : BOOL ;	//Access side I/O
+     Address_61 : BOOL ;	//Bogie Box 1
+     Address_62 : BOOL ;	//Bogie Box 2
+     Address_63 : BOOL ;	//Bogie Box 3
+     Address_64 : BOOL ;	//Bogie Box 4
+     Address_70 : BOOL ;	//Spreader
+     Address_x04 : BOOL ;	//      NOT   USED
+     Address_x05 : BOOL ;	//      NOT   USED
+     Address_x06 : BOOL ;	//      NOT   USED
+     Address_x07 : BOOL ;	//      NOT   USED
+     Address_x08 : BOOL ;	//      NOT   USED
+     Address_x09 : BOOL ;	//      NOT   USED
+     Address_x10 : BOOL ;	//      NOT   USED
+     Address_x11 : BOOL ;	//      NOT   USED
+     Address_x12 : BOOL ;	//      NOT   USED
+     Address_x13 : BOOL ;	//      NOT   USED
+    END_STRUCT ;	
+    Spare_Real : ARRAY  [1 .. 16 ] OF REAL ;	
+    Spare_Int : ARRAY  [1 .. 16 ] OF INT ;	
+    Spare_Bit : ARRAY  [1 .. 16 ] OF BOOL ;	
+    Spare_byte : ARRAY  [1 .. 646 ] OF BYTE ;	
+    PLC_cycle_time : INT ;	//PLC_cycle time.. Last line in KcLogger
+   END_STRUCT ;	
+  END_STRUCT ;	
+BEGIN
+   CART.Header.Crane_ID := 0; 
+   CART.Header.Sender := 1; 
+   CART.Header.seq := 0; 
+   CART.Header.Len := 1300; 
+   CART.Header.Spare_I8 := 0; 
+   CART.Header.Spare_I10 := 0; 
+   CART.A1.PD1 := 0; 
+   CART.A1.PD2 := 0; 
+   CART.A1.PDn := 0; 
+   CART.A1.PD5 := 0; 
+   CART.A1.PD8 := 0; 
+   CART.A1.REF1 := 0; 
+   CART.A1.Bits.VA_RUN := FALSE; 
+   CART.A1.Bits.VA_DriveOK := FALSE; 
+   CART.A1.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.A1.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.A1.Bits.FaultInverted := FALSE; 
+   CART.A1.Bits.Ready := FALSE; 
+   CART.A1.Bits.K7 := FALSE; 
+   CART.A1.Bits.Spare_x0_7 := FALSE; 
+   CART.A1.Bits.CW1_S1 := FALSE; 
+   CART.A1.Bits.CW1_S2 := FALSE; 
+   CART.A1.Bits.CW1_S12 := FALSE; 
+   CART.A1.Bits.CW1_S22 := FALSE; 
+   CART.A1.Bits.CW2_RunDisable := FALSE; 
+   CART.A1.Bits.CW1_Ramp2 := FALSE; 
+   CART.A1.Bits.spare_x1_6 := FALSE; 
+   CART.A1.Bits.spare_x1_7 := FALSE; 
+   CART.A2.PD1 := 0; 
+   CART.A2.PD2 := 0; 
+   CART.A2.PDn := 0; 
+   CART.A2.PD5 := 0; 
+   CART.A2.PD8 := 0; 
+   CART.A2.REF1 := 0; 
+   CART.A2.Bits.VA_RUN := FALSE; 
+   CART.A2.Bits.VA_DriveOK := FALSE; 
+   CART.A2.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.A2.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.A2.Bits.FaultInverted := FALSE; 
+   CART.A2.Bits.Ready := FALSE; 
+   CART.A2.Bits.K7 := FALSE; 
+   CART.A2.Bits.Spare_x0_7 := FALSE; 
+   CART.A2.Bits.CW1_S1 := FALSE; 
+   CART.A2.Bits.CW1_S2 := FALSE; 
+   CART.A2.Bits.CW1_S12 := FALSE; 
+   CART.A2.Bits.CW1_S22 := FALSE; 
+   CART.A2.Bits.CW2_RunDisable := FALSE; 
+   CART.A2.Bits.CW1_Ramp2 := FALSE; 
+   CART.A2.Bits.spare_x1_6 := FALSE; 
+   CART.A2.Bits.spare_x1_7 := FALSE; 
+   CART.E.PD1 := 0; 
+   CART.E.PD2 := 0; 
+   CART.E.PDn := 0; 
+   CART.E.PD5 := 0; 
+   CART.E.PD8 := 0; 
+   CART.E.REF1 := 0; 
+   CART.E.Bits.VA_RUN := FALSE; 
+   CART.E.Bits.VA_DriveOK := FALSE; 
+   CART.E.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.E.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.E.Bits.FaultInverted := FALSE; 
+   CART.E.Bits.Ready := FALSE; 
+   CART.E.Bits.K7 := FALSE; 
+   CART.E.Bits.Spare_x0_7 := FALSE; 
+   CART.E.Bits.CW1_S1 := FALSE; 
+   CART.E.Bits.CW1_S2 := FALSE; 
+   CART.E.Bits.CW1_S12 := FALSE; 
+   CART.E.Bits.CW1_S22 := FALSE; 
+   CART.E.Bits.CW2_RunDisable := FALSE; 
+   CART.E.Bits.CW2_Setposition := FALSE; 
+   CART.E.Bits.CW3_FloatingBypass := FALSE; 
+   CART.E.Bits.Spare_x1_7 := FALSE; 
+   CART.R1.PD1 := 0; 
+   CART.R1.PD2 := 0; 
+   CART.R1.PDn := 0; 
+   CART.R1.PD5 := 0; 
+   CART.R1.PD8 := 0; 
+   CART.R1.REF1 := 0; 
+   CART.R1.Bits.VA_RUN := FALSE; 
+   CART.R1.Bits.VA_DriveOK := FALSE; 
+   CART.R1.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.R1.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.R1.Bits.FaultInverted := FALSE; 
+   CART.R1.Bits.Ready := FALSE; 
+   CART.R1.Bits.K7 := FALSE; 
+   CART.R1.Bits.Spare_x0_7 := FALSE; 
+   CART.R1.Bits.CW1_S1 := FALSE; 
+   CART.R1.Bits.CW1_S2 := FALSE; 
+   CART.R1.Bits.CW1_S12 := FALSE; 
+   CART.R1.Bits.CW1_S22 := FALSE; 
+   CART.R1.Bits.CW2_RunDisable := FALSE; 
+   CART.R1.Bits.CW3_FloatingBypass := FALSE; 
+   CART.R1.Bits.CW1_AltControlMode := FALSE; 
+   CART.R1.Bits.Spare_x1_7 := FALSE; 
+   CART.R2.PD1 := 0; 
+   CART.R2.PD2 := 0; 
+   CART.R2.PDn := 0; 
+   CART.R2.PD5 := 0; 
+   CART.R2.PD8 := 0; 
+   CART.R2.REF1 := 0; 
+   CART.R2.Bits.VA_RUN := FALSE; 
+   CART.R2.Bits.VA_DriveOK := FALSE; 
+   CART.R2.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.R2.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.R2.Bits.FaultInverted := FALSE; 
+   CART.R2.Bits.Ready := FALSE; 
+   CART.R2.Bits.K7 := FALSE; 
+   CART.R2.Bits.Spare_x0_7 := FALSE; 
+   CART.R2.Bits.CW1_S1 := FALSE; 
+   CART.R2.Bits.CW1_S2 := FALSE; 
+   CART.R2.Bits.CW1_S12 := FALSE; 
+   CART.R2.Bits.CW1_S22 := FALSE; 
+   CART.R2.Bits.CW2_RunDisable := FALSE; 
+   CART.R2.Bits.CW3_FloatingBypass := FALSE; 
+   CART.R2.Bits.CW1_AltControlMode := FALSE; 
+   CART.R2.Bits.Spare_x1_7 := FALSE; 
+   CART.R3.PD1 := 0; 
+   CART.R3.PD2 := 0; 
+   CART.R3.PDn := 0; 
+   CART.R3.PD5 := 0; 
+   CART.R3.PD8 := 0; 
+   CART.R3.REF1 := 0; 
+   CART.R3.Bits.VA_RUN := FALSE; 
+   CART.R3.Bits.VA_DriveOK := FALSE; 
+   CART.R3.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.R3.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.R3.Bits.FaultInverted := FALSE; 
+   CART.R3.Bits.Ready := FALSE; 
+   CART.R3.Bits.K7 := FALSE; 
+   CART.R3.Bits.Spare_x0_7 := FALSE; 
+   CART.R3.Bits.CW1_S1 := FALSE; 
+   CART.R3.Bits.CW1_S2 := FALSE; 
+   CART.R3.Bits.CW1_S12 := FALSE; 
+   CART.R3.Bits.CW1_S22 := FALSE; 
+   CART.R3.Bits.CW2_RunDisable := FALSE; 
+   CART.R3.Bits.CW3_FloatingBypass := FALSE; 
+   CART.R3.Bits.CW1_AltControlMode := FALSE; 
+   CART.R3.Bits.Spare_x1_7 := FALSE; 
+   CART.R4.PD1 := 0; 
+   CART.R4.PD2 := 0; 
+   CART.R4.PDn := 0; 
+   CART.R4.PD5 := 0; 
+   CART.R4.PD8 := 0; 
+   CART.R4.REF1 := 0; 
+   CART.R4.Bits.VA_RUN := FALSE; 
+   CART.R4.Bits.VA_DriveOK := FALSE; 
+   CART.R4.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.R4.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.R4.Bits.FaultInverted := FALSE; 
+   CART.R4.Bits.Ready := FALSE; 
+   CART.R4.Bits.K7 := FALSE; 
+   CART.R4.Bits.Spare_x0_7 := FALSE; 
+   CART.R4.Bits.CW1_S1 := FALSE; 
+   CART.R4.Bits.CW1_S2 := FALSE; 
+   CART.R4.Bits.CW1_S12 := FALSE; 
+   CART.R4.Bits.CW1_S22 := FALSE; 
+   CART.R4.Bits.CW2_RunDisable := FALSE; 
+   CART.R4.Bits.CW3_FloatingBypass := FALSE; 
+   CART.R4.Bits.CW1_AltControlMode := FALSE; 
+   CART.R4.Bits.Spare_x1_7 := FALSE; 
+   CART.B1.PD1 := 0; 
+   CART.B1.PD2 := 0; 
+   CART.B1.PDn := 0; 
+   CART.B1.PD5 := 0; 
+   CART.B1.PD8 := 0; 
+   CART.B1.REF2 := 0; 
+   CART.B1.Bits.VA_RUN := FALSE; 
+   CART.B1.Bits.VA_DriveOK := FALSE; 
+   CART.B1.Bits.FaultInverted := FALSE; 
+   CART.B1.Bits.Ready := FALSE; 
+   CART.B1.Bits.K7 := FALSE; 
+   CART.B1.Bits.Spare_x0_5 := FALSE; 
+   CART.B1.Bits.Spare_x0_6 := FALSE; 
+   CART.B1.Bits.Spare_x0_7 := FALSE; 
+   CART.B1.Bits.CW1_S1 := FALSE; 
+   CART.B1.Bits.Spare_x1_1 := FALSE; 
+   CART.B1.Bits.Spare_x1_2 := FALSE; 
+   CART.B1.Bits.Spare_x1_3 := FALSE; 
+   CART.B1.Bits.Spare_x1_4 := FALSE; 
+   CART.B1.Bits.Spare_x1_5 := FALSE; 
+   CART.B1.Bits.Spare_x1_6 := FALSE; 
+   CART.B1.Bits.Spare_x1_7 := FALSE; 
+   CART.B2.PD1 := 0; 
+   CART.B2.PD2 := 0; 
+   CART.B2.PDn := 0; 
+   CART.B2.PD5 := 0; 
+   CART.B2.PD8 := 0; 
+   CART.B2.REF2 := 0; 
+   CART.B2.Bits.VA_RUN := FALSE; 
+   CART.B2.Bits.VA_DriveOK := FALSE; 
+   CART.B2.Bits.FaultInverted := FALSE; 
+   CART.B2.Bits.Ready := FALSE; 
+   CART.B2.Bits.K7 := FALSE; 
+   CART.B2.Bits.Spare_x0_5 := FALSE; 
+   CART.B2.Bits.Spare_x0_6 := FALSE; 
+   CART.B2.Bits.Spare_x0_7 := FALSE; 
+   CART.B2.Bits.CW1_S1 := FALSE; 
+   CART.B2.Bits.Spare_x1_1 := FALSE; 
+   CART.B2.Bits.Spare_x1_2 := FALSE; 
+   CART.B2.Bits.Spare_x1_3 := FALSE; 
+   CART.B2.Bits.Spare_x1_4 := FALSE; 
+   CART.B2.Bits.Spare_x1_5 := FALSE; 
+   CART.B2.Bits.Spare_x1_6 := FALSE; 
+   CART.B2.Bits.Spare_x1_7 := FALSE; 
+   CART.B3.PD1 := 0; 
+   CART.B3.PD2 := 0; 
+   CART.B3.PDn := 0; 
+   CART.B3.PD5 := 0; 
+   CART.B3.PD8 := 0; 
+   CART.B3.REF2 := 0; 
+   CART.B3.Bits.VA_RUN := FALSE; 
+   CART.B3.Bits.VA_DriveOK := FALSE; 
+   CART.B3.Bits.FaultInverted := FALSE; 
+   CART.B3.Bits.Ready := FALSE; 
+   CART.B3.Bits.K7 := FALSE; 
+   CART.B3.Bits.Spare_x0_5 := FALSE; 
+   CART.B3.Bits.Spare_x0_6 := FALSE; 
+   CART.B3.Bits.Spare_x0_7 := FALSE; 
+   CART.B3.Bits.CW1_S1 := FALSE; 
+   CART.B3.Bits.Spare_x1_1 := FALSE; 
+   CART.B3.Bits.Spare_x1_2 := FALSE; 
+   CART.B3.Bits.Spare_x1_3 := FALSE; 
+   CART.B3.Bits.Spare_x1_4 := FALSE; 
+   CART.B3.Bits.Spare_x1_5 := FALSE; 
+   CART.B3.Bits.Spare_x1_6 := FALSE; 
+   CART.B3.Bits.Spare_x1_7 := FALSE; 
+   CART.B4.PD1 := 0; 
+   CART.B4.PD2 := 0; 
+   CART.B4.PDn := 0; 
+   CART.B4.PD5 := 0; 
+   CART.B4.PD8 := 0; 
+   CART.B4.REF2 := 0; 
+   CART.B4.Bits.VA_RUN := FALSE; 
+   CART.B4.Bits.VA_DriveOK := FALSE; 
+   CART.B4.Bits.FaultInverted := FALSE; 
+   CART.B4.Bits.Ready := FALSE; 
+   CART.B4.Bits.K7 := FALSE; 
+   CART.B4.Bits.Spare_x0_5 := FALSE; 
+   CART.B4.Bits.Spare_x0_6 := FALSE; 
+   CART.B4.Bits.Spare_x0_7 := FALSE; 
+   CART.B4.Bits.CW1_S1 := FALSE; 
+   CART.B4.Bits.Spare_x1_1 := FALSE; 
+   CART.B4.Bits.Spare_x1_2 := FALSE; 
+   CART.B4.Bits.Spare_x1_3 := FALSE; 
+   CART.B4.Bits.Spare_x1_4 := FALSE; 
+   CART.B4.Bits.Spare_x1_5 := FALSE; 
+   CART.B4.Bits.Spare_x1_6 := FALSE; 
+   CART.B4.Bits.Spare_x1_7 := FALSE; 
+   CART.W.PD1 := 0; 
+   CART.W.PD2 := 0; 
+   CART.W.PDn := 0; 
+   CART.W.PD5 := 0; 
+   CART.W.PD8 := 0; 
+   CART.W.REF2 := 0; 
+   CART.W.Bits.VA_RUN := FALSE; 
+   CART.W.Bits.VA_DriveOK := FALSE; 
+   CART.W.Bits.VAM_DIR1_Motor := FALSE; 
+   CART.W.Bits.VAM_DIR2_Motor := FALSE; 
+   CART.W.Bits.FaultInverted := FALSE; 
+   CART.W.Bits.Ready := FALSE; 
+   CART.W.Bits.K7 := FALSE; 
+   CART.W.Bits.Spare_x0_7 := FALSE; 
+   CART.W.Bits.CW1_S1 := FALSE; 
+   CART.W.Bits.CW1_S2 := FALSE; 
+   CART.W.Bits.CW1_AltControlMode := FALSE; 
+   CART.W.Bits.Spare_x1_3 := FALSE; 
+   CART.W.Bits.Spare_x1_4 := FALSE; 
+   CART.W.Bits.Spare_x1_5 := FALSE; 
+   CART.W.Bits.Spare_x1_6 := FALSE; 
+   CART.W.Bits.Spare_x1_7 := FALSE; 
+   CART.O.PD1 := 0; 
+   CART.O.PD2 := 0; 
+   CART.O.PD3 := 0; 
+   CART.O.PD5 := 0; 
+   CART.O.PD8 := 0; 
+   CART.O.Bits.RUN := FALSE; 
+   CART.O.Bits.Ready := FALSE; 
+   CART.O.Bits.Synchronized := FALSE; 
+   CART.O.Bits.FaultInverted := FALSE; 
+   CART.O.Bits.Spare_x0_4 := FALSE; 
+   CART.O.Bits.Spare_x0_5 := FALSE; 
+   CART.O.Bits.Spare_x0_6 := FALSE; 
+   CART.O.Bits.Spare_x0_7 := FALSE; 
+   CART.O.Bits.CW_Synchronized := FALSE; 
+   CART.O.Bits.Spare_x1_1 := FALSE; 
+   CART.O.Bits.Spare_x1_2 := FALSE; 
+   CART.O.Bits.Spare_x1_3 := FALSE; 
+   CART.O.Bits.Spare_x1_4 := FALSE; 
+   CART.O.Bits.Spare_x1_5 := FALSE; 
+   CART.O.Bits.Spare_x1_6 := FALSE; 
+   CART.O.Bits.Spare_x1_7 := FALSE; 
+   CART.T.PD1 := 0; 
+   CART.T.PD2 := 0; 
+   CART.T.PD3 := 0; 
+   CART.T.PD5 := 0; 
+   CART.T.PD8 := 0; 
+   CART.T.Bits.RUN := FALSE; 
+   CART.T.Bits.Ready := FALSE; 
+   CART.T.Bits.Fault_Inverted := FALSE; 
+   CART.T.Bits.Spare_x0_3 := FALSE; 
+   CART.T.Bits.Spare_x0_4 := FALSE; 
+   CART.T.Bits.Spare_x0_5 := FALSE; 
+   CART.T.Bits.Spare_x0_6 := FALSE; 
+   CART.T.Bits.Spare_x0_7 := FALSE; 
+   CART.T.Bits.Spare_x1_0 := FALSE; 
+   CART.T.Bits.Spare_x1_1 := FALSE; 
+   CART.T.Bits.Spare_x1_2 := FALSE; 
+   CART.T.Bits.Spare_x1_3 := FALSE; 
+   CART.T.Bits.Spare_x1_4 := FALSE; 
+   CART.T.Bits.Spare_x1_5 := FALSE; 
+   CART.T.Bits.Spare_x1_6 := FALSE; 
+   CART.T.Bits.Spare_x1_7 := FALSE; 
+   CART.Control.MO_CSEL := FALSE; 
+   CART.Control.MO_RSEL := FALSE; 
+   CART.Control.MO_F1SEL := FALSE; 
+   CART.Control.MO_F2SEL := FALSE; 
+   CART.Control.MO_SSEL := FALSE; 
+   CART.Control.MO_GSEL := FALSE; 
+   CART.Control.MO_TSEL := FALSE; 
+   CART.Control.con_x07 := FALSE; 
+   CART.Control.IO_CON := FALSE; 
+   CART.Control.MO_ESTOP_OK := FALSE; 
+   CART.Control.con_x10 := FALSE; 
+   CART.Control.con_x11 := FALSE; 
+   CART.Control.con_x12 := FALSE; 
+   CART.Control.Maintenance_mode := FALSE; 
+   CART.Control.Remote_Sel := FALSE; 
+   CART.Control.Local_Sel := FALSE; 
+   CART.Hoist.A1_POS := 0.000000e+000; 
+   CART.Hoist.A2_POS := 0.000000e+000; 
+   CART.Hoist.A1_A2_POS_DIFF := 0.000000e+000; 
+   CART.Hoist.SYNCHRO_POSITION := 0.000000e+000; 
+   CART.Hoist.TRIM_POSITION := 0.000000e+000; 
+   CART.Hoist.MA_CLOAD := 0.000000e+000; 
+   CART.Hoist.MA_LOAD := 0.000000e+000; 
+   CART.Hoist.MA1_LOAD := 0.000000e+000; 
+   CART.Hoist.MA2_LOAD := 0.000000e+000; 
+   CART.Hoist.LOAD_VAR_LOAD_RL := 0.000000e+000; 
+   CART.Hoist.LOAD_VAR_LOAD_FL := 0.000000e+000; 
+   CART.Hoist.LOAD_VAR_LOAD_FR := 0.000000e+000; 
+   CART.Hoist.LOAD_VAR_LOAD_RR := 0.000000e+000; 
+   CART.Hoist.CORNER_1_LOAD := 0.000000e+000; 
+   CART.Hoist.CORNER_2_LOAD := 0.000000e+000; 
+   CART.Hoist.CORNER_3_LOAD := 0.000000e+000; 
+   CART.Hoist.CORNER_4_LOAD := 0.000000e+000; 
+   CART.Hoist.SPEED_REQUEST := 0.000000e+000; 
+   CART.Hoist.SLOWDOWN_SPD := 0.000000e+000; 
+   CART.Hoist.ESP := 0.000000e+000; 
+   CART.Hoist.A_LOAD_CHANGE := 0; 
+   CART.Hoist.MA1_DIR1_DIS := FALSE; 
+   CART.Hoist.MA1_DIR2_DIS := FALSE; 
+   CART.Hoist.MA1_DIR1_STOP := FALSE; 
+   CART.Hoist.MA1_DIR2_STOP := FALSE; 
+   CART.Hoist.MA2_DIR1_DIS := FALSE; 
+   CART.Hoist.MA2_DIR2_DIS := FALSE; 
+   CART.Hoist.MA2_DIR1_STOP := FALSE; 
+   CART.Hoist.MA2_DIR2_STOP := FALSE; 
+   CART.Hoist.MA_POS_OK := FALSE; 
+   CART.Hoist.Sync_Error := FALSE; 
+   CART.Hoist.Sync_stop := FALSE; 
+   CART.Hoist.MA_SR := FALSE; 
+   CART.Hoist.MA_Someload := FALSE; 
+   CART.Hoist.ho_x83_5 := FALSE; 
+   CART.Hoist.ho_x83_6 := FALSE; 
+   CART.Hoist.ho_x83_7 := FALSE; 
+   CART.Hoist.ho_x84_0 := FALSE; 
+   CART.Hoist.ho_x84_1 := FALSE; 
+   CART.Hoist.ho_x84_2 := FALSE; 
+   CART.Hoist.ho_x84_3 := FALSE; 
+   CART.Hoist.ho_x84_4 := FALSE; 
+   CART.Hoist.ho_x84_5 := FALSE; 
+   CART.Hoist.ho_x84_6 := FALSE; 
+   CART.Hoist.ho_x84_7 := FALSE; 
+   CART.Hoist.MAR_DIR1 := FALSE; 
+   CART.Hoist.MAR_DIR2 := FALSE; 
+   CART.Hoist.MAF_DIR1 := FALSE; 
+   CART.Hoist.MAF_DIR2 := FALSE; 
+   CART.Hoist.MAS_DIR1 := FALSE; 
+   CART.Hoist.MAS_DIR2 := FALSE; 
+   CART.Hoist.ho_x85_6 := FALSE; 
+   CART.Hoist.ho_x85_7 := FALSE; 
+   CART.Trolley.POS := 0.000000e+000; 
+   CART.Trolley.D2V_POS := 0.000000e+000; 
+   CART.Trolley.CCS_POS := 0.000000e+000; 
+   CART.Trolley.Speed_Request := 0.000000e+000; 
+   CART.Trolley.Slowdown_Speed := 0.000000e+000; 
+   CART.Trolley.ESP := 0.000000e+000; 
+   CART.Trolley.DIR1_DIS := FALSE; 
+   CART.Trolley.DIR2_DIS := FALSE; 
+   CART.Trolley.DIR1_STOP := FALSE; 
+   CART.Trolley.DIR2_STOP := FALSE; 
+   CART.Trolley.POS_OK := FALSE; 
+   CART.Trolley.Tr_x24_5 := FALSE; 
+   CART.Trolley.Tr_x24_6 := FALSE; 
+   CART.Trolley.Tr_x24_7 := FALSE; 
+   CART.Trolley.MER_DIR1 := FALSE; 
+   CART.Trolley.MER_DIR2 := FALSE; 
+   CART.Trolley.MEF_DIR1 := FALSE; 
+   CART.Trolley.MEF_DIR2 := FALSE; 
+   CART.Trolley.MES_DIR1 := FALSE; 
+   CART.Trolley.MES_DIR2 := FALSE; 
+   CART.Trolley.Tr_x25_6 := FALSE; 
+   CART.Trolley.Tr_x25_7 := FALSE; 
+   CART.Gantry.POS := 0.000000e+000; 
+   CART.Gantry.CRANE_TO_CRANE_DISTANCE := 0.000000e+000; 
+   CART.Gantry.Speed_Request := 0.000000e+000; 
+   CART.Gantry.Slowdown_Speed := 0.000000e+000; 
+   CART.Gantry.ESP := 0.000000e+000; 
+   CART.Gantry.DIR1_DIS := FALSE; 
+   CART.Gantry.DIR2_DIS := FALSE; 
+   CART.Gantry.DIR1_STOP := FALSE; 
+   CART.Gantry.DIR2_STOP := FALSE; 
+   CART.Gantry.MR_POS_OK := FALSE; 
+   CART.Gantry.Ga_x20_5 := FALSE; 
+   CART.Gantry.Ga_x20_6 := FALSE; 
+   CART.Gantry.Ga_x20_7 := FALSE; 
+   CART.Gantry.MRR_DIR1 := FALSE; 
+   CART.Gantry.MRR_DIR2 := FALSE; 
+   CART.Gantry.MRF_DIR1 := FALSE; 
+   CART.Gantry.MRF_DIR2 := FALSE; 
+   CART.Gantry.MRS_DIR1 := FALSE; 
+   CART.Gantry.MRS_DIR2 := FALSE; 
+   CART.Gantry.Ga_x21_6 := FALSE; 
+   CART.Gantry.Ga_x21_7 := FALSE; 
+   CART.Gantry.MR_ACC := FALSE; 
+   CART.Gantry.MR_DEC := FALSE; 
+   CART.Gantry.MR2_ACC := FALSE; 
+   CART.Gantry.MR2_DEC := FALSE; 
+   CART.Gantry.MR_ENC_ACC := FALSE; 
+   CART.Gantry.MR_ENC_DEC := FALSE; 
+   CART.Gantry.MR_MINSPON := FALSE; 
+   CART.Gantry.Ga_x22_7 := FALSE; 
+   CART.Gantry.Ga_x23_0 := FALSE; 
+   CART.Gantry.Ga_x23_1 := FALSE; 
+   CART.Gantry.Ga_x23_2 := FALSE; 
+   CART.Gantry.Ga_x23_3 := FALSE; 
+   CART.Gantry.Ga_x23_4 := FALSE; 
+   CART.Gantry.Ga_x23_5 := FALSE; 
+   CART.Gantry.Ga_x23_6 := FALSE; 
+   CART.Gantry.Ga_x23_7 := FALSE; 
+   CART.ACM.B1_LOAD := 0.000000e+000; 
+   CART.ACM.B2_LOAD := 0.000000e+000; 
+   CART.ACM.B3_LOAD := 0.000000e+000; 
+   CART.ACM.B4_LOAD := 0.000000e+000; 
+   CART.ACM.Skew_Ref := 0.000000e+000; 
+   CART.ACM.MM_E_REF := 0.000000e+000; 
+   CART.ACM.MM_R_REF := 0.000000e+000; 
+   CART.ACM.KN_Factor := 0.000000e+000; 
+   CART.ACM.B1_Sway_Speed := 0.000000e+000; 
+   CART.ACM.B2_Sway_Speed := 0.000000e+000; 
+   CART.ACM.B3_Sway_Speed := 0.000000e+000; 
+   CART.ACM.B4_Sway_Speed := 0.000000e+000; 
+   CART.ACM.B1_Force_OUT := 0.000000e+000; 
+   CART.ACM.B2_Force_OUT := 0.000000e+000; 
+   CART.ACM.B3_Force_OUT := 0.000000e+000; 
+   CART.ACM.B4_Force_OUT := 0.000000e+000; 
+   CART.Spreader.Twistlocks_Locked := FALSE; 
+   CART.Spreader.Twistlocks_Unlocked := FALSE; 
+   CART.Spreader.Landed := FALSE; 
+   CART.Spreader.Telescope_locked := FALSE; 
+   CART.Spreader.Telescope_unlocked := FALSE; 
+   CART.Spreader.Twin_UP := FALSE; 
+   CART.Spreader.Spr_x06 := FALSE; 
+   CART.Spreader.Spr_x07 := FALSE; 
+   CART.Spreader.Spr_x08 := FALSE; 
+   CART.Spreader.Spr_x09 := FALSE; 
+   CART.Spreader.Spr_x10 := FALSE; 
+   CART.Spreader.Spr_x11 := FALSE; 
+   CART.Spreader.Spr_x12 := FALSE; 
+   CART.Spreader.Spr_x13 := FALSE; 
+   CART.Spreader.Spr_x14 := FALSE; 
+   CART.Spreader.Spr_x15 := FALSE; 
+   CART.Bogie.Pos1 := 0.000000e+000; 
+   CART.Bogie.Pos2 := 0.000000e+000; 
+   CART.Bogie.Pos3 := 0.000000e+000; 
+   CART.Bogie.Pos4 := 0.000000e+000; 
+   CART.Bogie.Pos5 := 0.000000e+000; 
+   CART.Bogie.Pos6 := 0.000000e+000; 
+   CART.Bogie.Pos7 := 0.000000e+000; 
+   CART.Bogie.Pos8 := 0.000000e+000; 
+   CART.Safeway.A1_SPEED := 0.000000e+000; 
+   CART.Safeway.A2_SPEED := 0.000000e+000; 
+   CART.Safeway.A1_TARGET_SPEED := 0.000000e+000; 
+   CART.Safeway.A2_TARGET_SPEED := 0.000000e+000; 
+   CART.Safeway.A1_Safeway_Error := FALSE; 
+   CART.Safeway.A1_Speed_Window_Alarm := FALSE; 
+   CART.Safeway.A1_Overspeed1_Alarm := FALSE; 
+   CART.Safeway.A1_Overspeed2_Alarm := FALSE; 
+   CART.Safeway.A1_System_Alarm_Ack := FALSE; 
+   CART.Safeway.A1_Speed_Window_Ack := FALSE; 
+   CART.Safeway.A1_Overspeed1_Ack := FALSE; 
+   CART.Safeway.A1_Overspeed2_Ack := FALSE; 
+   CART.Safeway.A2_Safeway_Error := FALSE; 
+   CART.Safeway.A2_Speed_Window_Alarm := FALSE; 
+   CART.Safeway.A2_Overspeed1_Alarm := FALSE; 
+   CART.Safeway.A2_Overspeed2_Alarm := FALSE; 
+   CART.Safeway.A2_System_Alarm_Ack := FALSE; 
+   CART.Safeway.A2_Speed_Window_Ack := FALSE; 
+   CART.Safeway.A2_Overspeed1_Ack := FALSE; 
+   CART.Safeway.A2_Overspeed2_Ack := FALSE; 
+   CART.Cable_Reel.MIN_TRQ := 0.000000e+000; 
+   CART.Cable_Reel.MAX_TRQ := 0.000000e+000; 
+   CART.Cable_Reel.Transducer_Current := 0.000000e+000; 
+   CART.CCS.Gantry_Target := 0.000000e+000; 
+   CART.CCS.Trolley_target := 0.000000e+000; 
+   CART.CCS.List_Angle := 0.000000e+000; 
+   CART.CCS.Trim_Angle := 0.000000e+000; 
+   CART.CCS.CCS_Seq_State := 0; 
+   CART.CCS.spdr_diff_to_Cont_X := 0; 
+   CART.CCS.spdr_diff_to_Cont_Y := 0; 
+   CART.CCS.spdr_diff_to_Cont_SKEW := 0; 
+   CART.CCS.spdr_abspos_x := 0; 
+   CART.CCS.spdr_abspos_y := 0; 
+   CART.CCS.spdr_abspos_skew := 0; 
+   CART.CCS.spdr_diff_to_target_X := 0; 
+   CART.CCS.spdr_diff_to_target_Y := 0; 
+   CART.CCS.spdr_diff_to_target_Z := 0; 
+   CART.CCS.spdr_diff_to_target_SKEW := 0; 
+   CART.CCS.Spdr_diff_to_Ideal_X := 0; 
+   CART.CCS.Spdr_diff_to_Ideal_Y := 0; 
+   CART.CCS.Spdr_diff_to_Ideal_SK := 0; 
+   CART.CCS.Angle_To_Track := 0; 
+   CART.CCS.Distance_To_Track := 0; 
+   CART.CCS.Autosteering_ok := FALSE; 
+   CART.CCS.RTG_ON_RAIL := FALSE; 
+   CART.MISC.Wind_Speed := 0.000000e+000; 
+   CART.MISC.HUMID_EROOM := 0.000000e+000; 
+   CART.MISC.HUMID_TFR := 0.000000e+000; 
+   CART.MISC.HUMID_TR_CUBICLE := 0.000000e+000; 
+   CART.MISC.TEMP_EROOM := 0.000000e+000; 
+   CART.MISC.TEMP_TFR := 0.000000e+000; 
+   CART.MISC.TEMP_TR_CUBICLE := 0.000000e+000; 
+   CART.Profibus.Address_6 := FALSE; 
+   CART.Profibus.Address_7 := FALSE; 
+   CART.Profibus.Address_9 := FALSE; 
+   CART.Profibus.Address_10 := FALSE; 
+   CART.Profibus.Address_11 := FALSE; 
+   CART.Profibus.Address_12 := FALSE; 
+   CART.Profibus.Address_13 := FALSE; 
+   CART.Profibus.Address_14 := FALSE; 
+   CART.Profibus.Address_15 := FALSE; 
+   CART.Profibus.Address_16 := FALSE; 
+   CART.Profibus.Address_20 := FALSE; 
+   CART.Profibus.Address_21 := FALSE; 
+   CART.Profibus.Address_22 := FALSE; 
+   CART.Profibus.Address_x01 := FALSE; 
+   CART.Profibus.Address_x02 := FALSE; 
+   CART.Profibus.Address_x03 := FALSE; 
+   CART.Profibus.Address_31 := FALSE; 
+   CART.Profibus.Address_32 := FALSE; 
+   CART.Profibus.Address_33 := FALSE; 
+   CART.Profibus.Address_34 := FALSE; 
+   CART.Profibus.Address_35 := FALSE; 
+   CART.Profibus.Address_36 := FALSE; 
+   CART.Profibus.Address_37 := FALSE; 
+   CART.Profibus.Address_38 := FALSE; 
+   CART.Profibus.Address_40 := FALSE; 
+   CART.Profibus.Address_51 := FALSE; 
+   CART.Profibus.Address_52 := FALSE; 
+   CART.Profibus.Address_53 := FALSE; 
+   CART.Profibus.Address_54 := FALSE; 
+   CART.Profibus.Address_55 := FALSE; 
+   CART.Profibus.Address_56 := FALSE; 
+   CART.Profibus.Address_57 := FALSE; 
+   CART.Profibus.Address_60 := FALSE; 
+   CART.Profibus.Address_61 := FALSE; 
+   CART.Profibus.Address_62 := FALSE; 
+   CART.Profibus.Address_63 := FALSE; 
+   CART.Profibus.Address_64 := FALSE; 
+   CART.Profibus.Address_70 := FALSE; 
+   CART.Profibus.Address_x04 := FALSE; 
+   CART.Profibus.Address_x05 := FALSE; 
+   CART.Profibus.Address_x06 := FALSE; 
+   CART.Profibus.Address_x07 := FALSE; 
+   CART.Profibus.Address_x08 := FALSE; 
+   CART.Profibus.Address_x09 := FALSE; 
+   CART.Profibus.Address_x10 := FALSE; 
+   CART.Profibus.Address_x11 := FALSE; 
+   CART.Profibus.Address_x12 := FALSE; 
+   CART.Profibus.Address_x13 := FALSE; 
+   CART.Spare_Real[1] := 0.000000e+000; 
+   CART.Spare_Real[2] := 0.000000e+000; 
+   CART.Spare_Real[3] := 0.000000e+000; 
+   CART.Spare_Real[4] := 0.000000e+000; 
+   CART.Spare_Real[5] := 0.000000e+000; 
+   CART.Spare_Real[6] := 0.000000e+000; 
+   CART.Spare_Real[7] := 0.000000e+000; 
+   CART.Spare_Real[8] := 0.000000e+000; 
+   CART.Spare_Real[9] := 0.000000e+000; 
+   CART.Spare_Real[10] := 0.000000e+000; 
+   CART.Spare_Real[11] := 0.000000e+000; 
+   CART.Spare_Real[12] := 0.000000e+000; 
+   CART.Spare_Real[13] := 0.000000e+000; 
+   CART.Spare_Real[14] := 0.000000e+000; 
+   CART.Spare_Real[15] := 0.000000e+000; 
+   CART.Spare_Real[16] := 0.000000e+000; 
+   CART.Spare_Int[1] := 0; 
+   CART.Spare_Int[2] := 0; 
+   CART.Spare_Int[3] := 0; 
+   CART.Spare_Int[4] := 0; 
+   CART.Spare_Int[5] := 0; 
+   CART.Spare_Int[6] := 0; 
+   CART.Spare_Int[7] := 0; 
+   CART.Spare_Int[8] := 0; 
+   CART.Spare_Int[9] := 0; 
+   CART.Spare_Int[10] := 0; 
+   CART.Spare_Int[11] := 0; 
+   CART.Spare_Int[12] := 0; 
+   CART.Spare_Int[13] := 0; 
+   CART.Spare_Int[14] := 0; 
+   CART.Spare_Int[15] := 0; 
+   CART.Spare_Int[16] := 0; 
+   CART.Spare_Bit[1] := FALSE; 
+   CART.Spare_Bit[2] := FALSE; 
+   CART.Spare_Bit[3] := FALSE; 
+   CART.Spare_Bit[4] := FALSE; 
+   CART.Spare_Bit[5] := FALSE; 
+   CART.Spare_Bit[6] := FALSE; 
+   CART.Spare_Bit[7] := FALSE; 
+   CART.Spare_Bit[8] := FALSE; 
+   CART.Spare_Bit[9] := FALSE; 
+   CART.Spare_Bit[10] := FALSE; 
+   CART.Spare_Bit[11] := FALSE; 
+   CART.Spare_Bit[12] := FALSE; 
+   CART.Spare_Bit[13] := FALSE; 
+   CART.Spare_Bit[14] := FALSE; 
+   CART.Spare_Bit[15] := FALSE; 
+   CART.Spare_Bit[16] := FALSE; 
+   CART.Spare_byte[1] := B#16#0; 
+   CART.Spare_byte[2] := B#16#0; 
+   CART.Spare_byte[3] := B#16#0; 
+   CART.Spare_byte[4] := B#16#0; 
+   CART.Spare_byte[5] := B#16#0; 
+   CART.Spare_byte[6] := B#16#0; 
+   CART.Spare_byte[7] := B#16#0; 
+   CART.Spare_byte[8] := B#16#0; 
+   CART.Spare_byte[9] := B#16#0; 
+   CART.Spare_byte[10] := B#16#0; 
+   CART.Spare_byte[11] := B#16#0; 
+   CART.Spare_byte[12] := B#16#0; 
+   CART.Spare_byte[13] := B#16#0; 
+   CART.Spare_byte[14] := B#16#0; 
+   CART.Spare_byte[15] := B#16#0; 
+   CART.Spare_byte[16] := B#16#0; 
+   CART.Spare_byte[17] := B#16#0; 
+   CART.Spare_byte[18] := B#16#0; 
+   CART.Spare_byte[19] := B#16#0; 
+   CART.Spare_byte[20] := B#16#0; 
+   CART.Spare_byte[21] := B#16#0; 
+   CART.Spare_byte[22] := B#16#0; 
+   CART.Spare_byte[23] := B#16#0; 
+   CART.Spare_byte[24] := B#16#0; 
+   CART.Spare_byte[25] := B#16#0; 
+   CART.Spare_byte[26] := B#16#0; 
+   CART.Spare_byte[27] := B#16#0; 
+   CART.Spare_byte[28] := B#16#0; 
+   CART.Spare_byte[29] := B#16#0; 
+   CART.Spare_byte[30] := B#16#0; 
+   CART.Spare_byte[31] := B#16#0; 
+   CART.Spare_byte[32] := B#16#0; 
+   CART.Spare_byte[33] := B#16#0; 
+   CART.Spare_byte[34] := B#16#0; 
+   CART.Spare_byte[35] := B#16#0; 
+   CART.Spare_byte[36] := B#16#0; 
+   CART.Spare_byte[37] := B#16#0; 
+   CART.Spare_byte[38] := B#16#0; 
+   CART.Spare_byte[39] := B#16#0; 
+   CART.Spare_byte[40] := B#16#0; 
+   CART.Spare_byte[41] := B#16#0; 
+   CART.Spare_byte[42] := B#16#0; 
+   CART.Spare_byte[43] := B#16#0; 
+   CART.Spare_byte[44] := B#16#0; 
+   CART.Spare_byte[45] := B#16#0; 
+   CART.Spare_byte[46] := B#16#0; 
+   CART.Spare_byte[47] := B#16#0; 
+   CART.Spare_byte[48] := B#16#0; 
+   CART.Spare_byte[49] := B#16#0; 
+   CART.Spare_byte[50] := B#16#0; 
+   CART.Spare_byte[51] := B#16#0; 
+   CART.Spare_byte[52] := B#16#0; 
+   CART.Spare_byte[53] := B#16#0; 
+   CART.Spare_byte[54] := B#16#0; 
+   CART.Spare_byte[55] := B#16#0; 
+   CART.Spare_byte[56] := B#16#0; 
+   CART.Spare_byte[57] := B#16#0; 
+   CART.Spare_byte[58] := B#16#0; 
+   CART.Spare_byte[59] := B#16#0; 
+   CART.Spare_byte[60] := B#16#0; 
+   CART.Spare_byte[61] := B#16#0; 
+   CART.Spare_byte[62] := B#16#0; 
+   CART.Spare_byte[63] := B#16#0; 
+   CART.Spare_byte[64] := B#16#0; 
+   CART.Spare_byte[65] := B#16#0; 
+   CART.Spare_byte[66] := B#16#0; 
+   CART.Spare_byte[67] := B#16#0; 
+   CART.Spare_byte[68] := B#16#0; 
+   CART.Spare_byte[69] := B#16#0; 
+   CART.Spare_byte[70] := B#16#0; 
+   CART.Spare_byte[71] := B#16#0; 
+   CART.Spare_byte[72] := B#16#0; 
+   CART.Spare_byte[73] := B#16#0; 
+   CART.Spare_byte[74] := B#16#0; 
+   CART.Spare_byte[75] := B#16#0; 
+   CART.Spare_byte[76] := B#16#0; 
+   CART.Spare_byte[77] := B#16#0; 
+   CART.Spare_byte[78] := B#16#0; 
+   CART.Spare_byte[79] := B#16#0; 
+   CART.Spare_byte[80] := B#16#0; 
+   CART.Spare_byte[81] := B#16#0; 
+   CART.Spare_byte[82] := B#16#0; 
+   CART.Spare_byte[83] := B#16#0; 
+   CART.Spare_byte[84] := B#16#0; 
+   CART.Spare_byte[85] := B#16#0; 
+   CART.Spare_byte[86] := B#16#0; 
+   CART.Spare_byte[87] := B#16#0; 
+   CART.Spare_byte[88] := B#16#0; 
+   CART.Spare_byte[89] := B#16#0; 
+   CART.Spare_byte[90] := B#16#0; 
+   CART.Spare_byte[91] := B#16#0; 
+   CART.Spare_byte[92] := B#16#0; 
+   CART.Spare_byte[93] := B#16#0; 
+   CART.Spare_byte[94] := B#16#0; 
+   CART.Spare_byte[95] := B#16#0; 
+   CART.Spare_byte[96] := B#16#0; 
+   CART.Spare_byte[97] := B#16#0; 
+   CART.Spare_byte[98] := B#16#0; 
+   CART.Spare_byte[99] := B#16#0; 
+   CART.Spare_byte[100] := B#16#0; 
+   CART.Spare_byte[101] := B#16#0; 
+   CART.Spare_byte[102] := B#16#0; 
+   CART.Spare_byte[103] := B#16#0; 
+   CART.Spare_byte[104] := B#16#0; 
+   CART.Spare_byte[105] := B#16#0; 
+   CART.Spare_byte[106] := B#16#0; 
+   CART.Spare_byte[107] := B#16#0; 
+   CART.Spare_byte[108] := B#16#0; 
+   CART.Spare_byte[109] := B#16#0; 
+   CART.Spare_byte[110] := B#16#0; 
+   CART.Spare_byte[111] := B#16#0; 
+   CART.Spare_byte[112] := B#16#0; 
+   CART.Spare_byte[113] := B#16#0; 
+   CART.Spare_byte[114] := B#16#0; 
+   CART.Spare_byte[115] := B#16#0; 
+   CART.Spare_byte[116] := B#16#0; 
+   CART.Spare_byte[117] := B#16#0; 
+   CART.Spare_byte[118] := B#16#0; 
+   CART.Spare_byte[119] := B#16#0; 
+   CART.Spare_byte[120] := B#16#0; 
+   CART.Spare_byte[121] := B#16#0; 
+   CART.Spare_byte[122] := B#16#0; 
+   CART.Spare_byte[123] := B#16#0; 
+   CART.Spare_byte[124] := B#16#0; 
+   CART.Spare_byte[125] := B#16#0; 
+   CART.Spare_byte[126] := B#16#0; 
+   CART.Spare_byte[127] := B#16#0; 
+   CART.Spare_byte[128] := B#16#0; 
+   CART.Spare_byte[129] := B#16#0; 
+   CART.Spare_byte[130] := B#16#0; 
+   CART.Spare_byte[131] := B#16#0; 
+   CART.Spare_byte[132] := B#16#0; 
+   CART.Spare_byte[133] := B#16#0; 
+   CART.Spare_byte[134] := B#16#0; 
+   CART.Spare_byte[135] := B#16#0; 
+   CART.Spare_byte[136] := B#16#0; 
+   CART.Spare_byte[137] := B#16#0; 
+   CART.Spare_byte[138] := B#16#0; 
+   CART.Spare_byte[139] := B#16#0; 
+   CART.Spare_byte[140] := B#16#0; 
+   CART.Spare_byte[141] := B#16#0; 
+   CART.Spare_byte[142] := B#16#0; 
+   CART.Spare_byte[143] := B#16#0; 
+   CART.Spare_byte[144] := B#16#0; 
+   CART.Spare_byte[145] := B#16#0; 
+   CART.Spare_byte[146] := B#16#0; 
+   CART.Spare_byte[147] := B#16#0; 
+   CART.Spare_byte[148] := B#16#0; 
+   CART.Spare_byte[149] := B#16#0; 
+   CART.Spare_byte[150] := B#16#0; 
+   CART.Spare_byte[151] := B#16#0; 
+   CART.Spare_byte[152] := B#16#0; 
+   CART.Spare_byte[153] := B#16#0; 
+   CART.Spare_byte[154] := B#16#0; 
+   CART.Spare_byte[155] := B#16#0; 
+   CART.Spare_byte[156] := B#16#0; 
+   CART.Spare_byte[157] := B#16#0; 
+   CART.Spare_byte[158] := B#16#0; 
+   CART.Spare_byte[159] := B#16#0; 
+   CART.Spare_byte[160] := B#16#0; 
+   CART.Spare_byte[161] := B#16#0; 
+   CART.Spare_byte[162] := B#16#0; 
+   CART.Spare_byte[163] := B#16#0; 
+   CART.Spare_byte[164] := B#16#0; 
+   CART.Spare_byte[165] := B#16#0; 
+   CART.Spare_byte[166] := B#16#0; 
+   CART.Spare_byte[167] := B#16#0; 
+   CART.Spare_byte[168] := B#16#0; 
+   CART.Spare_byte[169] := B#16#0; 
+   CART.Spare_byte[170] := B#16#0; 
+   CART.Spare_byte[171] := B#16#0; 
+   CART.Spare_byte[172] := B#16#0; 
+   CART.Spare_byte[173] := B#16#0; 
+   CART.Spare_byte[174] := B#16#0; 
+   CART.Spare_byte[175] := B#16#0; 
+   CART.Spare_byte[176] := B#16#0; 
+   CART.Spare_byte[177] := B#16#0; 
+   CART.Spare_byte[178] := B#16#0; 
+   CART.Spare_byte[179] := B#16#0; 
+   CART.Spare_byte[180] := B#16#0; 
+   CART.Spare_byte[181] := B#16#0; 
+   CART.Spare_byte[182] := B#16#0; 
+   CART.Spare_byte[183] := B#16#0; 
+   CART.Spare_byte[184] := B#16#0; 
+   CART.Spare_byte[185] := B#16#0; 
+   CART.Spare_byte[186] := B#16#0; 
+   CART.Spare_byte[187] := B#16#0; 
+   CART.Spare_byte[188] := B#16#0; 
+   CART.Spare_byte[189] := B#16#0; 
+   CART.Spare_byte[190] := B#16#0; 
+   CART.Spare_byte[191] := B#16#0; 
+   CART.Spare_byte[192] := B#16#0; 
+   CART.Spare_byte[193] := B#16#0; 
+   CART.Spare_byte[194] := B#16#0; 
+   CART.Spare_byte[195] := B#16#0; 
+   CART.Spare_byte[196] := B#16#0; 
+   CART.Spare_byte[197] := B#16#0; 
+   CART.Spare_byte[198] := B#16#0; 
+   CART.Spare_byte[199] := B#16#0; 
+   CART.Spare_byte[200] := B#16#0; 
+   CART.Spare_byte[201] := B#16#0; 
+   CART.Spare_byte[202] := B#16#0; 
+   CART.Spare_byte[203] := B#16#0; 
+   CART.Spare_byte[204] := B#16#0; 
+   CART.Spare_byte[205] := B#16#0; 
+   CART.Spare_byte[206] := B#16#0; 
+   CART.Spare_byte[207] := B#16#0; 
+   CART.Spare_byte[208] := B#16#0; 
+   CART.Spare_byte[209] := B#16#0; 
+   CART.Spare_byte[210] := B#16#0; 
+   CART.Spare_byte[211] := B#16#0; 
+   CART.Spare_byte[212] := B#16#0; 
+   CART.Spare_byte[213] := B#16#0; 
+   CART.Spare_byte[214] := B#16#0; 
+   CART.Spare_byte[215] := B#16#0; 
+   CART.Spare_byte[216] := B#16#0; 
+   CART.Spare_byte[217] := B#16#0; 
+   CART.Spare_byte[218] := B#16#0; 
+   CART.Spare_byte[219] := B#16#0; 
+   CART.Spare_byte[220] := B#16#0; 
+   CART.Spare_byte[221] := B#16#0; 
+   CART.Spare_byte[222] := B#16#0; 
+   CART.Spare_byte[223] := B#16#0; 
+   CART.Spare_byte[224] := B#16#0; 
+   CART.Spare_byte[225] := B#16#0; 
+   CART.Spare_byte[226] := B#16#0; 
+   CART.Spare_byte[227] := B#16#0; 
+   CART.Spare_byte[228] := B#16#0; 
+   CART.Spare_byte[229] := B#16#0; 
+   CART.Spare_byte[230] := B#16#0; 
+   CART.Spare_byte[231] := B#16#0; 
+   CART.Spare_byte[232] := B#16#0; 
+   CART.Spare_byte[233] := B#16#0; 
+   CART.Spare_byte[234] := B#16#0; 
+   CART.Spare_byte[235] := B#16#0; 
+   CART.Spare_byte[236] := B#16#0; 
+   CART.Spare_byte[237] := B#16#0; 
+   CART.Spare_byte[238] := B#16#0; 
+   CART.Spare_byte[239] := B#16#0; 
+   CART.Spare_byte[240] := B#16#0; 
+   CART.Spare_byte[241] := B#16#0; 
+   CART.Spare_byte[242] := B#16#0; 
+   CART.Spare_byte[243] := B#16#0; 
+   CART.Spare_byte[244] := B#16#0; 
+   CART.Spare_byte[245] := B#16#0; 
+   CART.Spare_byte[246] := B#16#0; 
+   CART.Spare_byte[247] := B#16#0; 
+   CART.Spare_byte[248] := B#16#0; 
+   CART.Spare_byte[249] := B#16#0; 
+   CART.Spare_byte[250] := B#16#0; 
+   CART.Spare_byte[251] := B#16#0; 
+   CART.Spare_byte[252] := B#16#0; 
+   CART.Spare_byte[253] := B#16#0; 
+   CART.Spare_byte[254] := B#16#0; 
+   CART.Spare_byte[255] := B#16#0; 
+   CART.Spare_byte[256] := B#16#0; 
+   CART.Spare_byte[257] := B#16#0; 
+   CART.Spare_byte[258] := B#16#0; 
+   CART.Spare_byte[259] := B#16#0; 
+   CART.Spare_byte[260] := B#16#0; 
+   CART.Spare_byte[261] := B#16#0; 
+   CART.Spare_byte[262] := B#16#0; 
+   CART.Spare_byte[263] := B#16#0; 
+   CART.Spare_byte[264] := B#16#0; 
+   CART.Spare_byte[265] := B#16#0; 
+   CART.Spare_byte[266] := B#16#0; 
+   CART.Spare_byte[267] := B#16#0; 
+   CART.Spare_byte[268] := B#16#0; 
+   CART.Spare_byte[269] := B#16#0; 
+   CART.Spare_byte[270] := B#16#0; 
+   CART.Spare_byte[271] := B#16#0; 
+   CART.Spare_byte[272] := B#16#0; 
+   CART.Spare_byte[273] := B#16#0; 
+   CART.Spare_byte[274] := B#16#0; 
+   CART.Spare_byte[275] := B#16#0; 
+   CART.Spare_byte[276] := B#16#0; 
+   CART.Spare_byte[277] := B#16#0; 
+   CART.Spare_byte[278] := B#16#0; 
+   CART.Spare_byte[279] := B#16#0; 
+   CART.Spare_byte[280] := B#16#0; 
+   CART.Spare_byte[281] := B#16#0; 
+   CART.Spare_byte[282] := B#16#0; 
+   CART.Spare_byte[283] := B#16#0; 
+   CART.Spare_byte[284] := B#16#0; 
+   CART.Spare_byte[285] := B#16#0; 
+   CART.Spare_byte[286] := B#16#0; 
+   CART.Spare_byte[287] := B#16#0; 
+   CART.Spare_byte[288] := B#16#0; 
+   CART.Spare_byte[289] := B#16#0; 
+   CART.Spare_byte[290] := B#16#0; 
+   CART.Spare_byte[291] := B#16#0; 
+   CART.Spare_byte[292] := B#16#0; 
+   CART.Spare_byte[293] := B#16#0; 
+   CART.Spare_byte[294] := B#16#0; 
+   CART.Spare_byte[295] := B#16#0; 
+   CART.Spare_byte[296] := B#16#0; 
+   CART.Spare_byte[297] := B#16#0; 
+   CART.Spare_byte[298] := B#16#0; 
+   CART.Spare_byte[299] := B#16#0; 
+   CART.Spare_byte[300] := B#16#0; 
+   CART.Spare_byte[301] := B#16#0; 
+   CART.Spare_byte[302] := B#16#0; 
+   CART.Spare_byte[303] := B#16#0; 
+   CART.Spare_byte[304] := B#16#0; 
+   CART.Spare_byte[305] := B#16#0; 
+   CART.Spare_byte[306] := B#16#0; 
+   CART.Spare_byte[307] := B#16#0; 
+   CART.Spare_byte[308] := B#16#0; 
+   CART.Spare_byte[309] := B#16#0; 
+   CART.Spare_byte[310] := B#16#0; 
+   CART.Spare_byte[311] := B#16#0; 
+   CART.Spare_byte[312] := B#16#0; 
+   CART.Spare_byte[313] := B#16#0; 
+   CART.Spare_byte[314] := B#16#0; 
+   CART.Spare_byte[315] := B#16#0; 
+   CART.Spare_byte[316] := B#16#0; 
+   CART.Spare_byte[317] := B#16#0; 
+   CART.Spare_byte[318] := B#16#0; 
+   CART.Spare_byte[319] := B#16#0; 
+   CART.Spare_byte[320] := B#16#0; 
+   CART.Spare_byte[321] := B#16#0; 
+   CART.Spare_byte[322] := B#16#0; 
+   CART.Spare_byte[323] := B#16#0; 
+   CART.Spare_byte[324] := B#16#0; 
+   CART.Spare_byte[325] := B#16#0; 
+   CART.Spare_byte[326] := B#16#0; 
+   CART.Spare_byte[327] := B#16#0; 
+   CART.Spare_byte[328] := B#16#0; 
+   CART.Spare_byte[329] := B#16#0; 
+   CART.Spare_byte[330] := B#16#0; 
+   CART.Spare_byte[331] := B#16#0; 
+   CART.Spare_byte[332] := B#16#0; 
+   CART.Spare_byte[333] := B#16#0; 
+   CART.Spare_byte[334] := B#16#0; 
+   CART.Spare_byte[335] := B#16#0; 
+   CART.Spare_byte[336] := B#16#0; 
+   CART.Spare_byte[337] := B#16#0; 
+   CART.Spare_byte[338] := B#16#0; 
+   CART.Spare_byte[339] := B#16#0; 
+   CART.Spare_byte[340] := B#16#0; 
+   CART.Spare_byte[341] := B#16#0; 
+   CART.Spare_byte[342] := B#16#0; 
+   CART.Spare_byte[343] := B#16#0; 
+   CART.Spare_byte[344] := B#16#0; 
+   CART.Spare_byte[345] := B#16#0; 
+   CART.Spare_byte[346] := B#16#0; 
+   CART.Spare_byte[347] := B#16#0; 
+   CART.Spare_byte[348] := B#16#0; 
+   CART.Spare_byte[349] := B#16#0; 
+   CART.Spare_byte[350] := B#16#0; 
+   CART.Spare_byte[351] := B#16#0; 
+   CART.Spare_byte[352] := B#16#0; 
+   CART.Spare_byte[353] := B#16#0; 
+   CART.Spare_byte[354] := B#16#0; 
+   CART.Spare_byte[355] := B#16#0; 
+   CART.Spare_byte[356] := B#16#0; 
+   CART.Spare_byte[357] := B#16#0; 
+   CART.Spare_byte[358] := B#16#0; 
+   CART.Spare_byte[359] := B#16#0; 
+   CART.Spare_byte[360] := B#16#0; 
+   CART.Spare_byte[361] := B#16#0; 
+   CART.Spare_byte[362] := B#16#0; 
+   CART.Spare_byte[363] := B#16#0; 
+   CART.Spare_byte[364] := B#16#0; 
+   CART.Spare_byte[365] := B#16#0; 
+   CART.Spare_byte[366] := B#16#0; 
+   CART.Spare_byte[367] := B#16#0; 
+   CART.Spare_byte[368] := B#16#0; 
+   CART.Spare_byte[369] := B#16#0; 
+   CART.Spare_byte[370] := B#16#0; 
+   CART.Spare_byte[371] := B#16#0; 
+   CART.Spare_byte[372] := B#16#0; 
+   CART.Spare_byte[373] := B#16#0; 
+   CART.Spare_byte[374] := B#16#0; 
+   CART.Spare_byte[375] := B#16#0; 
+   CART.Spare_byte[376] := B#16#0; 
+   CART.Spare_byte[377] := B#16#0; 
+   CART.Spare_byte[378] := B#16#0; 
+   CART.Spare_byte[379] := B#16#0; 
+   CART.Spare_byte[380] := B#16#0; 
+   CART.Spare_byte[381] := B#16#0; 
+   CART.Spare_byte[382] := B#16#0; 
+   CART.Spare_byte[383] := B#16#0; 
+   CART.Spare_byte[384] := B#16#0; 
+   CART.Spare_byte[385] := B#16#0; 
+   CART.Spare_byte[386] := B#16#0; 
+   CART.Spare_byte[387] := B#16#0; 
+   CART.Spare_byte[388] := B#16#0; 
+   CART.Spare_byte[389] := B#16#0; 
+   CART.Spare_byte[390] := B#16#0; 
+   CART.Spare_byte[391] := B#16#0; 
+   CART.Spare_byte[392] := B#16#0; 
+   CART.Spare_byte[393] := B#16#0; 
+   CART.Spare_byte[394] := B#16#0; 
+   CART.Spare_byte[395] := B#16#0; 
+   CART.Spare_byte[396] := B#16#0; 
+   CART.Spare_byte[397] := B#16#0; 
+   CART.Spare_byte[398] := B#16#0; 
+   CART.Spare_byte[399] := B#16#0; 
+   CART.Spare_byte[400] := B#16#0; 
+   CART.Spare_byte[401] := B#16#0; 
+   CART.Spare_byte[402] := B#16#0; 
+   CART.Spare_byte[403] := B#16#0; 
+   CART.Spare_byte[404] := B#16#0; 
+   CART.Spare_byte[405] := B#16#0; 
+   CART.Spare_byte[406] := B#16#0; 
+   CART.Spare_byte[407] := B#16#0; 
+   CART.Spare_byte[408] := B#16#0; 
+   CART.Spare_byte[409] := B#16#0; 
+   CART.Spare_byte[410] := B#16#0; 
+   CART.Spare_byte[411] := B#16#0; 
+   CART.Spare_byte[412] := B#16#0; 
+   CART.Spare_byte[413] := B#16#0; 
+   CART.Spare_byte[414] := B#16#0; 
+   CART.Spare_byte[415] := B#16#0; 
+   CART.Spare_byte[416] := B#16#0; 
+   CART.Spare_byte[417] := B#16#0; 
+   CART.Spare_byte[418] := B#16#0; 
+   CART.Spare_byte[419] := B#16#0; 
+   CART.Spare_byte[420] := B#16#0; 
+   CART.Spare_byte[421] := B#16#0; 
+   CART.Spare_byte[422] := B#16#0; 
+   CART.Spare_byte[423] := B#16#0; 
+   CART.Spare_byte[424] := B#16#0; 
+   CART.Spare_byte[425] := B#16#0; 
+   CART.Spare_byte[426] := B#16#0; 
+   CART.Spare_byte[427] := B#16#0; 
+   CART.Spare_byte[428] := B#16#0; 
+   CART.Spare_byte[429] := B#16#0; 
+   CART.Spare_byte[430] := B#16#0; 
+   CART.Spare_byte[431] := B#16#0; 
+   CART.Spare_byte[432] := B#16#0; 
+   CART.Spare_byte[433] := B#16#0; 
+   CART.Spare_byte[434] := B#16#0; 
+   CART.Spare_byte[435] := B#16#0; 
+   CART.Spare_byte[436] := B#16#0; 
+   CART.Spare_byte[437] := B#16#0; 
+   CART.Spare_byte[438] := B#16#0; 
+   CART.Spare_byte[439] := B#16#0; 
+   CART.Spare_byte[440] := B#16#0; 
+   CART.Spare_byte[441] := B#16#0; 
+   CART.Spare_byte[442] := B#16#0; 
+   CART.Spare_byte[443] := B#16#0; 
+   CART.Spare_byte[444] := B#16#0; 
+   CART.Spare_byte[445] := B#16#0; 
+   CART.Spare_byte[446] := B#16#0; 
+   CART.Spare_byte[447] := B#16#0; 
+   CART.Spare_byte[448] := B#16#0; 
+   CART.Spare_byte[449] := B#16#0; 
+   CART.Spare_byte[450] := B#16#0; 
+   CART.Spare_byte[451] := B#16#0; 
+   CART.Spare_byte[452] := B#16#0; 
+   CART.Spare_byte[453] := B#16#0; 
+   CART.Spare_byte[454] := B#16#0; 
+   CART.Spare_byte[455] := B#16#0; 
+   CART.Spare_byte[456] := B#16#0; 
+   CART.Spare_byte[457] := B#16#0; 
+   CART.Spare_byte[458] := B#16#0; 
+   CART.Spare_byte[459] := B#16#0; 
+   CART.Spare_byte[460] := B#16#0; 
+   CART.Spare_byte[461] := B#16#0; 
+   CART.Spare_byte[462] := B#16#0; 
+   CART.Spare_byte[463] := B#16#0; 
+   CART.Spare_byte[464] := B#16#0; 
+   CART.Spare_byte[465] := B#16#0; 
+   CART.Spare_byte[466] := B#16#0; 
+   CART.Spare_byte[467] := B#16#0; 
+   CART.Spare_byte[468] := B#16#0; 
+   CART.Spare_byte[469] := B#16#0; 
+   CART.Spare_byte[470] := B#16#0; 
+   CART.Spare_byte[471] := B#16#0; 
+   CART.Spare_byte[472] := B#16#0; 
+   CART.Spare_byte[473] := B#16#0; 
+   CART.Spare_byte[474] := B#16#0; 
+   CART.Spare_byte[475] := B#16#0; 
+   CART.Spare_byte[476] := B#16#0; 
+   CART.Spare_byte[477] := B#16#0; 
+   CART.Spare_byte[478] := B#16#0; 
+   CART.Spare_byte[479] := B#16#0; 
+   CART.Spare_byte[480] := B#16#0; 
+   CART.Spare_byte[481] := B#16#0; 
+   CART.Spare_byte[482] := B#16#0; 
+   CART.Spare_byte[483] := B#16#0; 
+   CART.Spare_byte[484] := B#16#0; 
+   CART.Spare_byte[485] := B#16#0; 
+   CART.Spare_byte[486] := B#16#0; 
+   CART.Spare_byte[487] := B#16#0; 
+   CART.Spare_byte[488] := B#16#0; 
+   CART.Spare_byte[489] := B#16#0; 
+   CART.Spare_byte[490] := B#16#0; 
+   CART.Spare_byte[491] := B#16#0; 
+   CART.Spare_byte[492] := B#16#0; 
+   CART.Spare_byte[493] := B#16#0; 
+   CART.Spare_byte[494] := B#16#0; 
+   CART.Spare_byte[495] := B#16#0; 
+   CART.Spare_byte[496] := B#16#0; 
+   CART.Spare_byte[497] := B#16#0; 
+   CART.Spare_byte[498] := B#16#0; 
+   CART.Spare_byte[499] := B#16#0; 
+   CART.Spare_byte[500] := B#16#0; 
+   CART.Spare_byte[501] := B#16#0; 
+   CART.Spare_byte[502] := B#16#0; 
+   CART.Spare_byte[503] := B#16#0; 
+   CART.Spare_byte[504] := B#16#0; 
+   CART.Spare_byte[505] := B#16#0; 
+   CART.Spare_byte[506] := B#16#0; 
+   CART.Spare_byte[507] := B#16#0; 
+   CART.Spare_byte[508] := B#16#0; 
+   CART.Spare_byte[509] := B#16#0; 
+   CART.Spare_byte[510] := B#16#0; 
+   CART.Spare_byte[511] := B#16#0; 
+   CART.Spare_byte[512] := B#16#0; 
+   CART.Spare_byte[513] := B#16#0; 
+   CART.Spare_byte[514] := B#16#0; 
+   CART.Spare_byte[515] := B#16#0; 
+   CART.Spare_byte[516] := B#16#0; 
+   CART.Spare_byte[517] := B#16#0; 
+   CART.Spare_byte[518] := B#16#0; 
+   CART.Spare_byte[519] := B#16#0; 
+   CART.Spare_byte[520] := B#16#0; 
+   CART.Spare_byte[521] := B#16#0; 
+   CART.Spare_byte[522] := B#16#0; 
+   CART.Spare_byte[523] := B#16#0; 
+   CART.Spare_byte[524] := B#16#0; 
+   CART.Spare_byte[525] := B#16#0; 
+   CART.Spare_byte[526] := B#16#0; 
+   CART.Spare_byte[527] := B#16#0; 
+   CART.Spare_byte[528] := B#16#0; 
+   CART.Spare_byte[529] := B#16#0; 
+   CART.Spare_byte[530] := B#16#0; 
+   CART.Spare_byte[531] := B#16#0; 
+   CART.Spare_byte[532] := B#16#0; 
+   CART.Spare_byte[533] := B#16#0; 
+   CART.Spare_byte[534] := B#16#0; 
+   CART.Spare_byte[535] := B#16#0; 
+   CART.Spare_byte[536] := B#16#0; 
+   CART.Spare_byte[537] := B#16#0; 
+   CART.Spare_byte[538] := B#16#0; 
+   CART.Spare_byte[539] := B#16#0; 
+   CART.Spare_byte[540] := B#16#0; 
+   CART.Spare_byte[541] := B#16#0; 
+   CART.Spare_byte[542] := B#16#0; 
+   CART.Spare_byte[543] := B#16#0; 
+   CART.Spare_byte[544] := B#16#0; 
+   CART.Spare_byte[545] := B#16#0; 
+   CART.Spare_byte[546] := B#16#0; 
+   CART.Spare_byte[547] := B#16#0; 
+   CART.Spare_byte[548] := B#16#0; 
+   CART.Spare_byte[549] := B#16#0; 
+   CART.Spare_byte[550] := B#16#0; 
+   CART.Spare_byte[551] := B#16#0; 
+   CART.Spare_byte[552] := B#16#0; 
+   CART.Spare_byte[553] := B#16#0; 
+   CART.Spare_byte[554] := B#16#0; 
+   CART.Spare_byte[555] := B#16#0; 
+   CART.Spare_byte[556] := B#16#0; 
+   CART.Spare_byte[557] := B#16#0; 
+   CART.Spare_byte[558] := B#16#0; 
+   CART.Spare_byte[559] := B#16#0; 
+   CART.Spare_byte[560] := B#16#0; 
+   CART.Spare_byte[561] := B#16#0; 
+   CART.Spare_byte[562] := B#16#0; 
+   CART.Spare_byte[563] := B#16#0; 
+   CART.Spare_byte[564] := B#16#0; 
+   CART.Spare_byte[565] := B#16#0; 
+   CART.Spare_byte[566] := B#16#0; 
+   CART.Spare_byte[567] := B#16#0; 
+   CART.Spare_byte[568] := B#16#0; 
+   CART.Spare_byte[569] := B#16#0; 
+   CART.Spare_byte[570] := B#16#0; 
+   CART.Spare_byte[571] := B#16#0; 
+   CART.Spare_byte[572] := B#16#0; 
+   CART.Spare_byte[573] := B#16#0; 
+   CART.Spare_byte[574] := B#16#0; 
+   CART.Spare_byte[575] := B#16#0; 
+   CART.Spare_byte[576] := B#16#0; 
+   CART.Spare_byte[577] := B#16#0; 
+   CART.Spare_byte[578] := B#16#0; 
+   CART.Spare_byte[579] := B#16#0; 
+   CART.Spare_byte[580] := B#16#0; 
+   CART.Spare_byte[581] := B#16#0; 
+   CART.Spare_byte[582] := B#16#0; 
+   CART.Spare_byte[583] := B#16#0; 
+   CART.Spare_byte[584] := B#16#0; 
+   CART.Spare_byte[585] := B#16#0; 
+   CART.Spare_byte[586] := B#16#0; 
+   CART.Spare_byte[587] := B#16#0; 
+   CART.Spare_byte[588] := B#16#0; 
+   CART.Spare_byte[589] := B#16#0; 
+   CART.Spare_byte[590] := B#16#0; 
+   CART.Spare_byte[591] := B#16#0; 
+   CART.Spare_byte[592] := B#16#0; 
+   CART.Spare_byte[593] := B#16#0; 
+   CART.Spare_byte[594] := B#16#0; 
+   CART.Spare_byte[595] := B#16#0; 
+   CART.Spare_byte[596] := B#16#0; 
+   CART.Spare_byte[597] := B#16#0; 
+   CART.Spare_byte[598] := B#16#0; 
+   CART.Spare_byte[599] := B#16#0; 
+   CART.Spare_byte[600] := B#16#0; 
+   CART.Spare_byte[601] := B#16#0; 
+   CART.Spare_byte[602] := B#16#0; 
+   CART.Spare_byte[603] := B#16#0; 
+   CART.Spare_byte[604] := B#16#0; 
+   CART.Spare_byte[605] := B#16#0; 
+   CART.Spare_byte[606] := B#16#0; 
+   CART.Spare_byte[607] := B#16#0; 
+   CART.Spare_byte[608] := B#16#0; 
+   CART.Spare_byte[609] := B#16#0; 
+   CART.Spare_byte[610] := B#16#0; 
+   CART.Spare_byte[611] := B#16#0; 
+   CART.Spare_byte[612] := B#16#0; 
+   CART.Spare_byte[613] := B#16#0; 
+   CART.Spare_byte[614] := B#16#0; 
+   CART.Spare_byte[615] := B#16#0; 
+   CART.Spare_byte[616] := B#16#0; 
+   CART.Spare_byte[617] := B#16#0; 
+   CART.Spare_byte[618] := B#16#0; 
+   CART.Spare_byte[619] := B#16#0; 
+   CART.Spare_byte[620] := B#16#0; 
+   CART.Spare_byte[621] := B#16#0; 
+   CART.Spare_byte[622] := B#16#0; 
+   CART.Spare_byte[623] := B#16#0; 
+   CART.Spare_byte[624] := B#16#0; 
+   CART.Spare_byte[625] := B#16#0; 
+   CART.Spare_byte[626] := B#16#0; 
+   CART.Spare_byte[627] := B#16#0; 
+   CART.Spare_byte[628] := B#16#0; 
+   CART.Spare_byte[629] := B#16#0; 
+   CART.Spare_byte[630] := B#16#0; 
+   CART.Spare_byte[631] := B#16#0; 
+   CART.Spare_byte[632] := B#16#0; 
+   CART.Spare_byte[633] := B#16#0; 
+   CART.Spare_byte[634] := B#16#0; 
+   CART.Spare_byte[635] := B#16#0; 
+   CART.Spare_byte[636] := B#16#0; 
+   CART.Spare_byte[637] := B#16#0; 
+   CART.Spare_byte[638] := B#16#0; 
+   CART.Spare_byte[639] := B#16#0; 
+   CART.Spare_byte[640] := B#16#0; 
+   CART.Spare_byte[641] := B#16#0; 
+   CART.Spare_byte[642] := B#16#0; 
+   CART.Spare_byte[643] := B#16#0; 
+   CART.Spare_byte[644] := B#16#0; 
+   CART.Spare_byte[645] := B#16#0; 
+   CART.Spare_byte[646] := B#16#0; 
+   CART.PLC_cycle_time := 0; 
+END_DATA_BLOCK
+

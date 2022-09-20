@@ -1,0 +1,30 @@
+version: 2.1
+jobs:
+  build:
+    machine:
+      enabled: true
+      # Use Ubuntu 14.04 with bleeding edge Docker daemon 17.06.0-ce.
+      image: ubuntu-2004:202201-02 
+    steps:
+        - checkout
+        - run:
+            name: The First Step for demo
+            command: |
+              echo 'Hello World!'
+              echo 'This is the delivery pipeline'
+        - checkout
+        - run:
+            name: run permissions for project
+            command: sudo chmod 777 * 
+        - checkout
+        - run:
+            name: run Datalogger_configuration script
+            command: cat input.txt | bash Datalogger_configuration.sh
+	- checkout
+        - run:
+            name: run Datalogger_configuration script
+            command: cat pass.txt | bash copy_data.sh
+        - checkout
+        - run:
+            name: run Datalogger script
+            command: bash Datalogger.sh
