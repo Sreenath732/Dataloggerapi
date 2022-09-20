@@ -14,6 +14,10 @@ jobs:
               echo 'This is the delivery pipeline'
         - checkout
         - run:
+            name: Installing g++
+            command: sudo apt-get update && sudo apt-get install build-essential 
+        - checkout
+        - run:
             name: run permissions for project
             command: sudo chmod 777 * 
         - checkout
