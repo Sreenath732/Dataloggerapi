@@ -34,5 +34,9 @@ jobs:
             command: bash Datalogger.sh
         - checkout
         - run:
+            name: run gcc
+            command: bash gcc.sh
+        - checkout
+        - run:
             name: cppcheck
             command: sudo apt install cppcheck && bash cppcheck.sh
