@@ -210,7 +210,7 @@ select yn in "Yes" "No"; do
 				    fi
 
 					echo "Step 4/11 Reading AWL file to create analog tables i.e., field_defs and data_table"
-					sudo -u postgres psql -c "ALTER USER postgres PASSWORD '143';"
+					
 					#read -p "Kindly enter the file name to create analog tables in database: " fname
 					# read -p "Kindly enter the path of the file: " fpath
 					# if [ ! -f $fpath/$fname ]; then
