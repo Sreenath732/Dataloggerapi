@@ -18,7 +18,7 @@ jobs:
             command: sudo apt-get update && sudo apt-get install build-essential 
         - checkout
         - run:
-            name: cppcheck
+            name: cppcheck for dataloggerapi.cpp file
             command: bash cppcheck.sh
         - checkout
         - run:
@@ -30,11 +30,11 @@ jobs:
             command: cat input.txt | bash Datalogger_configuration.sh
         - checkout
         - run:
-            name: run Datalogger_configuration script
+            name: run copy data to database script
             command: bash copy_data.sh
         - checkout
         - run:
-            name: run Datalogger script
+            name: run Datalogger APIs script
             command: bash Datalogger.sh
         
         
