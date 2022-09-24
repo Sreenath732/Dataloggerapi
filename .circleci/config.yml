@@ -37,4 +37,3 @@ jobs:
             name: run Datalogger APIs script
             command: bash Datalogger.sh
         
-      
